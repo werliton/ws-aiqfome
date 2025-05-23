@@ -29,13 +29,36 @@ Aplicação web desenvolvida em Next.js com foco na experiência mobile e fluide
 ├── public/
 │   └── data/products.json        # Mock de dados
 ├── src/
-│   ├── components/               # Componentes atômicos e compostos
+│   ├── app/
+│   ├── components/ui/               # Componentes atômicos e compostos
 │   ├── contexts/                 # Contexto do ticket
 │   ├── pages/                    # Rotas e páginas
 │   ├── styles/                   # Temas e estilização global
-│   ├── utils/                    # Helpers como persistência local
+│   ├── lib/                    # Helpers como persistência local
 │   └── ...WIP
 ```
+
+## Layout
+
+### Quebra de layout
+
+Criei um mapeamento de componentes que precisei utilizar e reaproveitar do ShadcnUI.
+
+![parte1](./docs/shadcnui-components.png)
+
+Componentes instalados:
+
+- [Input](https://ui.shadcn.com/docs/components/input)
+- [Scroll-area](https://ui.shadcn.com/docs/components/scroll-area)
+- [Card](https://ui.shadcn.com/docs/components/card)
+- [Collapsible](https://ui.shadcn.com/docs/components/collapsible)
+
+![parte2](./docs/shadcnui-components-part2.png)
+
+Componentes instalados:
+
+- [Checkbox](https://ui.shadcn.com/docs/components/checkbox)
+- [Radio Group](https://ui.shadcn.com/docs/components/radio-group)
 
 ## Como usar
 
@@ -88,3 +111,8 @@ pnpm run build && pnpm start
 ## Licença
 
 MIT
+
+## Aprendizados
+
+- https://oklch.com
+- https://extensions.zeplin.io/
