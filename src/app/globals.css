@@ -3,30 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-nunito-sans);
-  --font-mono: var(--font-nunito-mono);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-}
+@layer base {
 
 :root {
   --radius: 0.625rem;
@@ -59,7 +36,9 @@
   --input: #e5e7eb;
   --ring: #99a1af;
 
-  --icon: #EECFFC; /* purple/200 | light */
+  --subtitle: #EECFFC; /* purple/200 | light */
+
+  --icon: var(--subtitle);
   --light: var(--secondary-foreground);
 
   --footer: var(--muted);
@@ -77,17 +56,33 @@
   --color-divider: #747c8c; /* decorative/dividers gray - Poderia ser o mesmo que color-icon-default (neutrals/400) ou um tom mais claro, verifique no Figma. */
   --gradient-bottom-default: #000; /* gradient/bottom default - É um gradiente, então isso seria a cor *base* ou *final* dele. Um gradiente provavelmente precisará de múltiplos tokens ou ser definido com `linear-gradient()`. */
 
+}
+}
 
-  /* SEM DONO */
-/* neutrals/400 | icons */
-
-/* text/purple */
-/* text/light #6D6F73 */
-/* decorative/diveders gray */
-/* gradient/bottom default */
-/* neutrals/999 | black */
-/* purple/700 | text #580F78*/
-/* neutrals/100 | containers 95 #EEF0F5*/
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-nunito-sans);
+  --font-mono: var(--font-nunito-mono);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-subtitle: var(--subtitle);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
 @layer base {
