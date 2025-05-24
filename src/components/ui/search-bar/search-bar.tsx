@@ -1,0 +1,10 @@
+import React from "react";
+import { SearchForm } from "../search-form";
+
+export const SearchBar = () => {
+  return (
+    <div className="bg-primary p-2">
+      <SearchForm />
+    </div>
+  );
+};

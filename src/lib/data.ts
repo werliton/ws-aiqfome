@@ -18,8 +18,28 @@ export function getAllStores(){
         open: item.open
     }))
 
-    return allStores
+    return allStores as Store[]
 }
+
+export function getAllStoresOpened(){
+
+    const allStores = data
+    .filter(item => item.open)
+    .map(item => ({
+        id: item.id, 
+        slug: item.slug,
+        name: item.name,
+        image: item.image,
+        delivery: item.delivery,
+        review: item.review,
+        open: item.open
+    }))
+
+    return allStores as Store[]
+}
+
+// getAllStoresClosed
+// getAllStoresOpened
 
 /**
  * 
