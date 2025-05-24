@@ -46,9 +46,9 @@
 
   /* cores novas */
   --color-status-success: #02A117;/* other/green/500 | success */
-  --color-status-warning: #FFB300/* other/yellow/500 | warning */
+  --color-status-warning: #FFB300;/* other/yellow/500 | warning */
 
-  --color-brand-teal:#027A7A;
+  --brand-teal:#027A7A; /* teal/600 | text*/
   --color-icon-default: #747c8c; /* neutrals/400 | icons*/
 
   --text-on-primary-dark: #580F78; /* purple/700 | text #580F78*/
@@ -92,6 +92,7 @@
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
   --color-icons: var(--icons);
+  --color-delivery: var(--brand-teal);
 }
 
 @layer base {

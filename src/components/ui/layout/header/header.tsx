@@ -32,8 +32,8 @@ export const Header = () => {
               className="dark:invert"
               src="/icons/right-arrow.svg"
               alt="arrow"
-              width={24}
-              height={24}
+              width={16}
+              height={16}
               priority
             />
           </div>

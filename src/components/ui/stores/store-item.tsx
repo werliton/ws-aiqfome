@@ -8,11 +8,41 @@ interface StoreItemProps {
   item: Store;
 }
 
-export const StoreItem = ({ item }: StoreItemProps) => {
-  const { image, name, delivery, review, open } = item;
-  const formattedDelivery = currencyFormat(delivery);
+const Delivery = ({ deliveryValue }: { deliveryValue: number }) => {
+  const deliveryIsFree = deliveryValue === 0;
+
+  const pathDelivery = deliveryIsFree
+    ? "/icons/delivery.svg"
+    : "/icons/delivery-moto.svg";
+  const textDelivery = deliveryIsFree
+    ? "grátis"
+    : currencyFormat(deliveryValue);
+
   return (
-    <Card className="h-[72px] py-0">
+    <span
+      className={cn(
+        "flex items-center gap-1 text-sm font-bold",
+        deliveryIsFree ? "text-delivery" : "text-primary",
+      )}
+    >
+      <Image
+        className="dark:invert"
+        src={pathDelivery}
+        alt="delivery"
+        width={24}
+        height={24}
+        priority
+      />
+      {textDelivery}{" "}
+    </span>
+  );
+};
+
+export const StoreItem = ({ item }: StoreItemProps) => {
+  const { image, name, delivery, review, open, hasPromotion } = item;
+
+  return (
+    <Card className="h-[72px] border-0 py-0 shadow">
       <CardHeader className="m-0 flex items-center justify-start p-0">
         <Image
           className={cn("dark:invert", open ? "" : "opacity-40")}
@@ -27,19 +57,12 @@ export const StoreItem = ({ item }: StoreItemProps) => {
             {name}
           </CardTitle>
           <CardDescription className="flex gap-2">
-            <span className="text-primary flex items-center gap-1 text-sm font-bold">
-              <Image
-                className="dark:invert"
-                src="/icons/delivery.svg"
-                alt="delivery"
-                width={24}
-                height={24}
-                priority
-              />
-              {formattedDelivery}{" "}
-            </span>
-            {/* opcional */}
-            <p className="text-icons text-xs font-bold">.</p>
+            <Delivery deliveryValue={delivery} />
+            {hasPromotion && (
+              <p className="text-icons h-4 text-xs leading-normal font-bold">
+                .
+              </p>
+            )}
             <span className="text-secondary-foreground flex items-center gap-1 text-sm font-bold">
               <Image
                 className="dark:invert"

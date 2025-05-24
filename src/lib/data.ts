@@ -10,7 +10,8 @@ const storeProperties = (item: Store) => ({
         image: item.image,
         delivery: item.delivery,
         review: item.review,
-        open: item.open
+        open: item.open,
+        hasPromotion: item.hasPromotion
     })
 
 /**

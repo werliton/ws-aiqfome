@@ -32,6 +32,7 @@ type Store = {
     slug: string
     products: Product[]
     categories: Category[]
+    hasPromotion: boolean
 }
 
 export type {

@@ -7,6 +7,7 @@
     "delivery": 0.0,
     "review": 4.7,
     "open": false,
+    "hasPromotion": false,
     "products": [
       {
         "id": "burger-1",
@@ -46,6 +47,7 @@
     "delivery": 7.0,
     "review": 4.4,
     "open": false,
+    "hasPromotion": false,
     "products": [
       {
         "id": "pizza-1",
@@ -85,6 +87,7 @@
     "delivery": 8.0,
     "review": 4.1,
     "open": true,
+    "hasPromotion": true,
     "products": [
       {
         "id": "sushi-1",
@@ -124,6 +127,7 @@
     "delivery": 0.0,
     "review": 4.8,
     "open": true,
+    "hasPromotion": false,
     "products": [
       {
         "id": "sanduiche",
