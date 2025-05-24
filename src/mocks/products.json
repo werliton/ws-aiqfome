@@ -1,0 +1,158 @@
+[
+  {
+    "id": "burger-king",
+    "slug": "burger-king",
+    "name": "Burger King",
+    "image": "/stores/burger-king.png",
+    "delivery": 0.0,
+    "review": 4.7,
+    "open": false,
+    "products": [
+      {
+        "id": "burger-1",
+        "slug": "x-bacon-duplo",
+        "title": "X-Bacon Duplo",
+        "description": "lorem ipson",
+        "price": 29.9,
+        "image": "/products/x-bacon-duplo.webp"
+      },
+      {
+        "id": "burger-2",
+        "slug": "cheddar-burgao",
+        "title": "Cheddar Burgão",
+        "description": "lorem ipson",
+        "price": 27.5,
+        "image": "/products/cheddar-burgao.png"
+      }
+    ],
+    "categories": [
+      {
+        "id": "lanches-burger-king",
+        "slug": "lanches",
+        "name": "Lanches",
+        "description": "Categoria Lanches da loja Burger King",
+        "productIds": [
+          "burger-1",
+          "burger-2"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mac",
+    "slug": "mcdonalds-novo-centro",
+    "name": "McDonald's - Novo centro",
+    "image": "/stores/mac.png",
+    "delivery": 7.0,
+    "review": 4.4,
+    "open": false,
+    "products": [
+      {
+        "id": "pizza-1",
+        "slug": "pizza-calabresa",
+        "title": "Pizza Calabresa",
+        "description": "lorem ipson",
+        "price": 39.9,
+        "image": "/products/pizza-calabresa.jpg"
+      },
+      {
+        "id": "pizza-2",
+        "slug": "pizza-portuguesa",
+        "title": "Pizza Portuguesa",
+        "description": "lorem ipson",
+        "price": 41.9,
+        "image": "/products/pizza-portuguesa.png"
+      }
+    ],
+    "categories": [
+      {
+        "id": "lanches-mac",
+        "slug": "lanches",
+        "name": "Lanches",
+        "description": "Categoria Lanches da loja McDonald's - Novo centro",
+        "productIds": [
+          "pizza-1",
+          "pizza-2"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mat",
+    "slug": "matsuri-concept",
+    "name": "Matsuri Concept",
+    "image": "/stores/mat.png",
+    "delivery": 8.0,
+    "review": 4.1,
+    "open": true,
+    "products": [
+      {
+        "id": "sushi-1",
+        "slug": "combo-12-pecas",
+        "title": "Combo 12 peças",
+        "description": "lorem ipson",
+        "price": 34.9,
+        "image": "/products/combo-12.jpg"
+      },
+      {
+        "id": "sushi-2",
+        "slug": "temaki-salmao",
+        "title": "Temaki Salmão",
+        "description": "lorem ipson",
+        "price": 22.0,
+        "image": "/products/temaki-salmao.jpg"
+      }
+    ],
+    "categories": [
+      {
+        "id": "japonesa-mat",
+        "slug": "japonesa",
+        "name": "Japonesa",
+        "description": "Categoria Japonesa da loja Matsuri Concept",
+        "productIds": [
+          "sushi-1",
+          "sushi-2"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "subway",
+    "slug": "subway-avenida-center",
+    "name": "Subway - Avenida center",
+    "image": "/stores/subway.png",
+    "delivery": 0.0,
+    "review": 4.8,
+    "open": true,
+    "products": [
+      {
+        "id": "sanduiche",
+        "slug": "sanduiche-queijo",
+        "title": "Sanduiche de metro de queijo",
+        "description": "lorem ipson",
+        "price": 34.9,
+        "image": "/products/sanduiche.png"
+      },
+      {
+        "id": "sanduiche-de-peru",
+        "slug": "sanduiche-de-peru",
+        "title": "Sanduiche de Peru",
+        "description": "lorem ipson",
+        "price": 22.0,
+        "image": "/products/sanduiche-de-peru.png"
+      }
+    ],
+    "categories": [
+      {
+        "id": "japonesa-subway",
+        "slug": "japonesa",
+        "name": "Japonesa",
+        "description": "Categoria Japonesa da loja Subway - Avenida center",
+        "productIds": [
+          "sanduiche",
+          "sanduiche-de-peru"
+        ]
+      }
+    ]
+  }
+]

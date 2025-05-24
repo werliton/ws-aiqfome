@@ -1,0 +1,44 @@
+import products from '@/mocks/products.json'
+import { Store } from '@/types'
+
+const data = products as Store[]
+
+/**
+ * 
+ */
+export function getAllStores(){
+
+    const allStores = data.map(item => ({
+        id: item.id, 
+        slug: item.slug,
+        name: item.name,
+        image: item.image,
+        delivery: item.delivery,
+        review: item.review,
+        open: item.open
+    }))
+
+    return allStores
+}
+
+/**
+ * 
+ */
+export function getCategoryByStore(storeId: string){
+    const foundStore = data.filter(item => item.id === storeId)
+    
+    if (foundStore.length === 0) return []
+
+    return foundStore[0]
+}
+
+/**
+ * 
+ */
+export function getProductsById(storeId: string, productId: string){
+    const foundProducts = data.filter(item => item.id === storeId)
+    
+    if (foundProducts.length === 0) return []
+
+    return foundProducts[0].products.filter(product => product.id === productId)
+}
