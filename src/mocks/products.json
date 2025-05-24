@@ -3,7 +3,7 @@
     "id": "burger-king",
     "slug": "burger-king",
     "name": "Burger King",
-    "image": "/stores/burger-king.png",
+    "image": "/images/stores/burgerking.png",
     "delivery": 0.0,
     "review": 4.7,
     "open": false,
@@ -14,7 +14,7 @@
         "title": "X-Bacon Duplo",
         "description": "lorem ipson",
         "price": 29.9,
-        "image": "/products/x-bacon-duplo.webp"
+        "image": "/images/products/x-bacon-duplo.webp"
       },
       {
         "id": "burger-2",
@@ -22,7 +22,7 @@
         "title": "Cheddar Burgão",
         "description": "lorem ipson",
         "price": 27.5,
-        "image": "/products/cheddar-burgao.png"
+        "image": "/images/products/cheddar-burgao.png"
       }
     ],
     "categories": [
@@ -42,7 +42,7 @@
     "id": "mac",
     "slug": "mcdonalds-novo-centro",
     "name": "McDonald's - Novo centro",
-    "image": "/stores/mac.png",
+    "image": "/images/stores/mac.png",
     "delivery": 7.0,
     "review": 4.4,
     "open": false,
@@ -53,7 +53,7 @@
         "title": "Pizza Calabresa",
         "description": "lorem ipson",
         "price": 39.9,
-        "image": "/products/pizza-calabresa.jpg"
+        "image": "/images/products/pizza-calabresa.jpg"
       },
       {
         "id": "pizza-2",
@@ -61,7 +61,7 @@
         "title": "Pizza Portuguesa",
         "description": "lorem ipson",
         "price": 41.9,
-        "image": "/products/pizza-portuguesa.png"
+        "image": "/images/products/pizza-portuguesa.png"
       }
     ],
     "categories": [
@@ -81,7 +81,7 @@
     "id": "mat",
     "slug": "matsuri-concept",
     "name": "Matsuri Concept",
-    "image": "/stores/mat.png",
+    "image": "/images/stores/mat.png",
     "delivery": 8.0,
     "review": 4.1,
     "open": true,
@@ -92,7 +92,7 @@
         "title": "Combo 12 peças",
         "description": "lorem ipson",
         "price": 34.9,
-        "image": "/products/combo-12.jpg"
+        "image": "/images/products/combo-12.jpg"
       },
       {
         "id": "sushi-2",
@@ -100,7 +100,7 @@
         "title": "Temaki Salmão",
         "description": "lorem ipson",
         "price": 22.0,
-        "image": "/products/temaki-salmao.jpg"
+        "image": "/images/products/temaki-salmao.jpg"
       }
     ],
     "categories": [
@@ -120,7 +120,7 @@
     "id": "subway",
     "slug": "subway-avenida-center",
     "name": "Subway - Avenida center",
-    "image": "/stores/subway.png",
+    "image": "/images/stores/subway.png",
     "delivery": 0.0,
     "review": 4.8,
     "open": true,
@@ -131,7 +131,7 @@
         "title": "Sanduiche de metro de queijo",
         "description": "lorem ipson",
         "price": 34.9,
-        "image": "/products/sanduiche.png"
+        "image": "/images/products/sanduiche.png"
       },
       {
         "id": "sanduiche-de-peru",
@@ -139,7 +139,7 @@
         "title": "Sanduiche de Peru",
         "description": "lorem ipson",
         "price": 22.0,
-        "image": "/products/sanduiche-de-peru.png"
+        "image": "/images/products/sanduiche-de-peru.png"
       }
     ],
     "categories": [
