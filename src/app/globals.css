@@ -40,13 +40,13 @@
 
   --icon: var(--subtitle);
   --light: var(--secondary-foreground);
-  --icons: #A8ADB7;
+  --icons: #A8ADB7; /* neutrals/400 | icons */
 
   --footer: var(--muted);
 
   /* cores novas */
-  --color-status-success: #02A117;/* other/green/500 | success */
-  --color-status-warning: #FFB300;/* other/yellow/500 | warning */
+  --status-success: #02A117;/* other/green/500 | success */
+  --status-warning: #FFB300;/* other/yellow/500 | warning */
 
   --brand-teal:#027A7A; /* teal/600 | text*/
   --color-icon-default: #747c8c; /* neutrals/400 | icons*/
@@ -93,6 +93,7 @@
   --color-sidebar: var(--sidebar);
   --color-icons: var(--icons);
   --color-delivery: var(--brand-teal);
+  --color-success: var(--status-success);
 }
 
 @layer base {

@@ -3,6 +3,8 @@ import { Card, CardHeader, CardTitle, CardDescription } from "../card";
 import Image from "next/image";
 import { Store } from "@/types";
 import { cn, currencyFormat } from "@/lib/utils";
+import { Dot } from "lucide-react";
+import { DeliveryIcon, DeliveryMotoIcon, StarIcon } from "../icons";
 
 interface StoreItemProps {
   item: Store;
@@ -11,9 +13,6 @@ interface StoreItemProps {
 const Delivery = ({ deliveryValue }: { deliveryValue: number }) => {
   const deliveryIsFree = deliveryValue === 0;
 
-  const pathDelivery = deliveryIsFree
-    ? "/icons/delivery.svg"
-    : "/icons/delivery-moto.svg";
   const textDelivery = deliveryIsFree
     ? "grátis"
     : currencyFormat(deliveryValue);
@@ -25,21 +24,14 @@ const Delivery = ({ deliveryValue }: { deliveryValue: number }) => {
         deliveryIsFree ? "text-delivery" : "text-primary",
       )}
     >
-      <Image
-        className="dark:invert"
-        src={pathDelivery}
-        alt="delivery"
-        width={24}
-        height={24}
-        priority
-      />
+      {deliveryIsFree ? <DeliveryIcon /> : <DeliveryMotoIcon />}
       {textDelivery}{" "}
     </span>
   );
 };
 
 export const StoreItem = ({ item }: StoreItemProps) => {
-  const { image, name, delivery, review, open, hasPromotion } = item;
+  const { image, name, delivery, review, open, hasPromotion, slug } = item;
 
   return (
     <Card className="h-[72px] border-0 py-0 shadow">
@@ -47,7 +39,7 @@ export const StoreItem = ({ item }: StoreItemProps) => {
         <Image
           className={cn("dark:invert", open ? "" : "opacity-40")}
           src={image}
-          alt="Banner principal"
+          alt={slug}
           width={72}
           height={72}
           priority
@@ -60,18 +52,11 @@ export const StoreItem = ({ item }: StoreItemProps) => {
             <Delivery deliveryValue={delivery} />
             {hasPromotion && (
               <p className="text-icons h-4 text-xs leading-normal font-bold">
-                .
+                <Dot />
               </p>
             )}
             <span className="text-secondary-foreground flex items-center gap-1 text-sm font-bold">
-              <Image
-                className="dark:invert"
-                src="/icons/star.svg"
-                alt="star"
-                width={24}
-                height={24}
-                priority
-              />
+              <StarIcon />
               {review}
             </span>
           </CardDescription>
