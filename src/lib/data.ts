@@ -3,12 +3,7 @@ import { Store } from '@/types'
 
 const data = products as Store[]
 
-/**
- * 
- */
-export function getAllStores(){
-
-    const allStores = data.map(item => ({
+const storeProperties = (item: Store) => ({
         id: item.id, 
         slug: item.slug,
         name: item.name,
@@ -16,30 +11,36 @@ export function getAllStores(){
         delivery: item.delivery,
         review: item.review,
         open: item.open
-    }))
+    })
+
+/**
+ * 
+ */
+export function getAllStores(){
+
+    const allStores = data.map(storeProperties)
 
     return allStores as Store[]
 }
 
 export function getAllStoresOpened(){
 
-    const allStores = data
+    const opened = data
     .filter(item => item.open)
-    .map(item => ({
-        id: item.id, 
-        slug: item.slug,
-        name: item.name,
-        image: item.image,
-        delivery: item.delivery,
-        review: item.review,
-        open: item.open
-    }))
+    .map(storeProperties)
 
-    return allStores as Store[]
+    return opened as Store[]
 }
 
-// getAllStoresClosed
-// getAllStoresOpened
+
+export function getAllStoresClosed(){
+
+    const closed = data
+    .filter(item => !item.open)
+    .map(storeProperties)
+
+    return closed as Store[]
+}
 
 /**
  * 

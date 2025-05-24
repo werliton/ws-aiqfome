@@ -1,5 +1,6 @@
 import { SearchBar } from "@/components/ui/search-bar/search-bar";
-import { StoreOpen } from "@/components/ui/stores/store-open";
+import { StoreClosed } from "@/components/ui/stores/store-closed";
+import { StoreOpened } from "@/components/ui/stores/store-opened";
 import Image from "next/image";
 
 export default function Home() {
@@ -17,10 +18,9 @@ export default function Home() {
       />
 
       <div className="bg-background flex flex-col gap-4 px-4 pt-6 pb-3">
-        <StoreOpen />
+        <StoreOpened />
 
-        <p className="text-primary text-xl font-extrabold">Fechados</p>
-        {/* <Stores /> */}
+        <StoreClosed />
       </div>
     </div>
   );

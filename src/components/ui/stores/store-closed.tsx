@@ -1,13 +1,13 @@
 import React from "react";
 import { Stores } from "./stores";
 import { StoreCortina } from "./store-cortina";
-import { getAllStoresOpened } from "@/lib/data";
+import { getAllStoresClosed } from "@/lib/data";
 
-export const StoreOpen = () => {
-  const data = getAllStoresOpened();
+export const StoreClosed = () => {
+  const data = getAllStoresClosed();
   return (
     <StoreCortina>
-      <StoreCortina.Title>Abertos</StoreCortina.Title>
+      <StoreCortina.Title>Fechados</StoreCortina.Title>
       <Stores data={data} />
     </StoreCortina>
   );
