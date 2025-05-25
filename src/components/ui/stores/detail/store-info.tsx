@@ -1,8 +1,14 @@
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { DeliveryIcon, DotMini, StarIcon, Heart, Share } from "../../icons";
+import { TextExtraLarge } from "../../title";
+import { getStoreById } from "@/lib/data";
 
-const Title = () => (
+interface TitleProps {
+  storeName: string;
+}
+
+const Title: React.FC<TitleProps> = ({ storeName }) => (
   <div className="flex flex-col items-start gap-2">
     <div className="flex items-center gap-2">
       <Image
@@ -13,9 +19,7 @@ const Title = () => (
         height={36}
         priority
       />
-      <h1 className="text-foreground text-xl leading-normal font-extrabold">
-        Nome da loja
-      </h1>
+      <TextExtraLarge>{storeName}</TextExtraLarge>
     </div>
     {/* subtitle */}
     <div className="flex w-full items-center justify-between">
@@ -113,9 +117,12 @@ const Info = () => {
 };
 
 export const StoreInfo = () => {
+  // Pegar StoreID da url. Deve vir via slug
+  const data = getStoreById("mat");
+
   return (
     <div className="flex flex-col gap-1.5 px-4 py-6">
-      <Title />
+      <Title storeName={data.name} />
 
       {/* delivery info */}
       <Info />

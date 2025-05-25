@@ -49,6 +49,14 @@ export function getAllStoresClosed(){
 }
 
 /**
+ * Lista dados de uma loja especifica
+ */
+export function getStoreById(storeId: string){
+    return data.filter(item => item.id === storeId).map(storeProperties)[0] as Store
+}
+
+
+/**
  * Lista todas as categorias de uma Loja especifica
  */
 export function getAllCategoriesByStoreId(storeId: string){
