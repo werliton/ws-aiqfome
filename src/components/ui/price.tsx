@@ -11,3 +11,7 @@ export const PriceDiscounted: React.FC<RNode> = ({ children }) => (
 export const PriceBase: React.FC<RNode> = ({ children }) => (
   <div className="text-price-base">{children}</div>
 );
+
+export const PricePlus: React.FC<RNode> = ({ children }) => (
+  <div className="text-price-plus">+{children}</div>
+);

@@ -6,6 +6,7 @@ import { cn, currencyFormat } from "@/lib/utils";
 import { Dot } from "lucide-react";
 import { DeliveryIcon, DeliveryMotoIcon, StarIcon } from "../icons";
 import Link from "next/link";
+import { ROUTES } from "@/lib/routes";
 
 interface StoreItemProps {
   item: Store;
@@ -52,7 +53,7 @@ export const StoreItem = ({ item }: StoreItemProps) => {
         />
         <div className="mx-3 flex flex-col gap-1">
           <CardTitle className="text-muted-foreground text-base font-bold">
-            {open ? <Link href={`/store/${id}`}>{name}</Link> : name}
+            {open ? <Link href={`${ROUTES.stores}/${id}`}>{name}</Link> : name}
           </CardTitle>
           <CardDescription className="flex gap-2">
             <Delivery deliveryValue={delivery} />

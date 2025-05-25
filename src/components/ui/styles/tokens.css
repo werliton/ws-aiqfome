@@ -19,6 +19,9 @@
     @apply justify-start text-right text-sm leading-tight font-bold text-primary
   }
 
+  .text-price-plus {
+    @apply justify-start text-delivery text-xs font-bold
+  }
   .card-base {
     @apply bg-card p-4 rounded-xl shadow-sm;
   }

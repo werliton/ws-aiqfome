@@ -3,6 +3,8 @@ import { CurrencyIcon } from "../../icons";
 import { PriceBase, PriceDiscounted, PriceOriginal } from "../../price";
 import { Subtitle, SubtitleItem } from "../../subtitle";
 import { currencyFormat } from "@/lib/utils";
+import Link from "next/link";
+import { ROUTES } from "@/lib/routes";
 
 // = Extract<Product, 'price' | 'priceDiscounted' >
 interface PromotionProps {
@@ -37,18 +39,22 @@ interface MenuSubItemProps {
 }
 
 export const MenuSubItem: React.FC<MenuSubItemProps> = ({ product }) => {
-  const { title, description, price, priceDiscounted } = product;
+  const { title, description, price, priceDiscounted, slug } = product;
 
   const formattedPrice = currencyFormat(price);
   const formattedPriceDiscounted = priceDiscounted
     ? currencyFormat(priceDiscounted)
     : "";
 
+  const route = `${ROUTES.stores}/loja-name/category-name/${slug}`;
+
   return (
     <div className="flex flex-1 items-center justify-between gap-4">
       <div className="inline-flex flex-1 flex-col items-start justify-start gap-0.5">
         <div className="inline-flex items-center justify-start gap-1">
-          <Subtitle>{title}</Subtitle>
+          <Link href={route}>
+            <Subtitle>{title}</Subtitle>
+          </Link>
         </div>
         <SubtitleItem>{description}</SubtitleItem>
       </div>
