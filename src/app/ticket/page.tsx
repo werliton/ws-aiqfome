@@ -1,4 +1,5 @@
 import { Divider } from "@/components/ui/divider";
+import { Payment } from "@/components/ui/molecules/payment";
 import { TicketHeader } from "@/components/ui/organisms/ticket/ticker-header";
 import { TicketFoodItem } from "@/components/ui/organisms/ticket/ticket-food-item/ticket-food-item";
 import { TicketFoodObs } from "@/components/ui/organisms/ticket/ticket-food-item/ticket-food-obs";
@@ -59,6 +60,8 @@ export default function Ticket() {
           {/* OPTIONAL */}
           <TicketFoodObs>tirar cebolinha</TicketFoodObs>
         </TicketFoodItem>
+
+        <Payment />
       </div>
     </div>
   );
