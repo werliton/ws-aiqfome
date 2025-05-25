@@ -5,6 +5,7 @@ import { Store } from "@/types";
 import { cn, currencyFormat } from "@/lib/utils";
 import { Dot } from "lucide-react";
 import { DeliveryIcon, DeliveryMotoIcon, StarIcon } from "../icons";
+import Link from "next/link";
 
 interface StoreItemProps {
   item: Store;
@@ -31,10 +32,15 @@ const Delivery = ({ deliveryValue }: { deliveryValue: number }) => {
 };
 
 export const StoreItem = ({ item }: StoreItemProps) => {
-  const { image, name, delivery, review, open, hasPromotion, slug } = item;
+  const { image, name, delivery, review, open, hasPromotion, slug, id } = item;
 
   return (
-    <Card className="h-[72px] border-0 py-0 shadow">
+    <Card
+      className={cn(
+        "h-[72px] border-0 py-0 shadow",
+        !open ? "cursor-not-allowed" : "hover:border",
+      )}
+    >
       <CardHeader className="m-0 flex items-center justify-start p-0">
         <Image
           className={cn("dark:invert", open ? "" : "opacity-40")}
@@ -46,7 +52,7 @@ export const StoreItem = ({ item }: StoreItemProps) => {
         />
         <div className="mx-3 flex flex-col gap-1">
           <CardTitle className="text-muted-foreground text-base font-bold">
-            {name}
+            {open ? <Link href={`/store/${id}`}>{name}</Link> : name}
           </CardTitle>
           <CardDescription className="flex gap-2">
             <Delivery deliveryValue={delivery} />
