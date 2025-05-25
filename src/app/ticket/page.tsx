@@ -8,7 +8,7 @@ import { TiketFoodItemButtons } from "@/components/ui/organisms/ticket/ticket-fo
 
 export default function Ticket() {
   return (
-    <div className="inline-flex w-96 flex-col items-center justify-start">
+    <div className="flex flex-col items-center justify-start">
       <div className="flex flex-col items-center justify-start self-stretch py-6">
         <TicketHeader imagePath={"/images/stores/mat.png"}>
           <TicketHeader.Title>Burger King</TicketHeader.Title>

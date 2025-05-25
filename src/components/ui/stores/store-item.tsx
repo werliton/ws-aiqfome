@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardHeader, CardTitle, CardDescription } from "../card";
 import Image from "next/image";
 import { Store } from "@/types";

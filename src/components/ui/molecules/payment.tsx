@@ -5,7 +5,7 @@ export const Payment = () => {
     <div
       data-action="checkout bottom"
       data-status="active"
-      className="inline-flex w-96 flex-col items-center justify-start rounded-tl-xl rounded-tr-xl bg-white shadow-[0px_0px_15px_0px_rgba(0,0,0,0.15)]"
+      className="absolute bottom-0 flex w-full flex-1 flex-col items-center justify-start rounded-tl-xl rounded-tr-xl bg-white shadow-[0px_0px_15px_0px_rgba(0,0,0,0.15)]"
     >
       <div className="inline-flex items-center justify-between self-stretch px-8 py-4">
         <div className="inline-flex flex-col items-start justify-start gap-0.5">

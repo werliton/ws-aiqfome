@@ -1,4 +1,3 @@
-import React from "react";
 import { PriceBase, PricePlus } from "../../../price";
 import { RNode } from "@/components/ui/subtitle";
 

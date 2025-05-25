@@ -1,4 +1,3 @@
-import React from "react";
 import { Stores } from "./stores";
 import { StoreCortina } from "./store-cortina";
 import { getAllStoresClosed } from "@/lib/data";
