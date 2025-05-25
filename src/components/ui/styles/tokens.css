@@ -1,0 +1,29 @@
+@layer components {
+  .text-label-sm {
+    @apply text-xs font-medium leading-tight text-muted-foreground;
+  }
+
+  .text-title-lg {
+    @apply text-xl font-bold text-foreground;
+  }
+
+  .text-price-original {
+    @apply text-right text-xs font-bold line-through text-secondary-foreground
+  }
+
+  .text-price-discounted {
+    @apply text-success justify-start text-right text-sm leading-tight font-bold
+  }
+
+  .text-price-base {
+    @apply justify-start text-right text-sm leading-tight font-bold text-primary
+  }
+
+  .card-base {
+    @apply bg-card p-4 rounded-xl shadow-sm;
+  }
+}
+
+
+
+  
