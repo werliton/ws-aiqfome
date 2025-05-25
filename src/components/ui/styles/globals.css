@@ -104,4 +104,10 @@
   body {
     @apply bg-background text-foreground font-sans;
   }
+
+  /* Estilo padrão para todos os links */
+  a {
+    @apply  hover:text-secondary-foreground transition-colors duration-150;
+  }
+
 }

@@ -3,23 +3,24 @@ import Image from "next/image";
 import { DeliveryIcon, DotMini, StarIcon, Heart, Share } from "../../icons";
 import { TextExtraLarge } from "../../title";
 import { getStoreById } from "@/lib/data";
+import { Store } from "@/types";
 
 interface TitleProps {
-  storeName: string;
+  store: Store;
 }
 
-const Title: React.FC<TitleProps> = ({ storeName }) => (
+const Title: React.FC<TitleProps> = ({ store }) => (
   <div className="flex flex-col items-start gap-2">
     <div className="flex items-center gap-2">
       <Image
         className="dark:invert"
-        src="/images/stores/mat.png"
+        src={store.image}
         alt="mat"
         width={36}
         height={36}
         priority
       />
-      <TextExtraLarge>{storeName}</TextExtraLarge>
+      <TextExtraLarge>{store.name}</TextExtraLarge>
     </div>
     {/* subtitle */}
     <div className="flex w-full items-center justify-between">
@@ -116,14 +117,18 @@ const Info = () => {
   );
 };
 
-export const StoreInfo = () => {
-  // Pegar StoreID da url. Deve vir via slug
-  const data = getStoreById("mat");
+interface StoreInfoProps {
+  storeId: string;
+}
+
+export const StoreInfo: React.FC<StoreInfoProps> = ({ storeId }) => {
+  if (!storeId) return null;
+
+  const data = getStoreById(storeId);
 
   return (
     <div className="flex flex-col gap-1.5 px-4 py-6">
-      <Title storeName={data.name} />
-
+      <Title store={data} />
       {/* delivery info */}
       <Info />
       {/* category list */}
