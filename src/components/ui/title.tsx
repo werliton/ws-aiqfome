@@ -23,23 +23,16 @@ export const TextMuted = () => {
     </div>
   );
 };
-export const TextDefault = () => {
-  return (
-    <div className="justify-start self-stretch text-xl font-bold text-neutral-700">
-      Ceviche de salmão
-    </div>
-  );
-};
 
-export const TextMedium = () => (
+export const TextMedium: React.FC<RNode> = ({ children }) => (
   <div className="justify-start text-base font-bold text-neutral-700">
-    quantos?
+    {children}
   </div>
 );
 
-export const TextSecondary = () => (
+export const TextSecondary: React.FC<RNode> = ({ children }) => (
   <div className="justify-start self-stretch text-sm leading-tight font-semibold text-neutral-500">
-    salmão temperado com limão, cebola e pimenta
+    {children}
   </div>
 );
 
