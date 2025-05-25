@@ -1,9 +1,13 @@
-export const PriceOriginal = () => (
-  <div className="text-price-original">R$ 17,00</div>
+import { RNode } from "./subtitle";
+
+export const PriceOriginal: React.FC<RNode> = ({ children }) => (
+  <div className="text-price-original">{children}</div>
 );
 
-export const PriceDiscounted = () => (
-  <span className="text-price-discounted">R$ 14,00</span>
+export const PriceDiscounted: React.FC<RNode> = ({ children }) => (
+  <span className="text-price-discounted">{children}</span>
 );
 
-export const PriceBase = () => <div className="text-price-base">R$ 13,99</div>;
+export const PriceBase: React.FC<RNode> = ({ children }) => (
+  <div className="text-price-base">{children}</div>
+);

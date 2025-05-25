@@ -1,19 +1,21 @@
-export const Subtitle = () => {
-  return (
-    <div className="justify-center font-['Nunito'] text-sm leading-tight font-semibold text-neutral-800">
-      Califórnia
-    </div>
-  );
+export type RNode = {
+  children: React.ReactNode;
 };
 
-export const SubtitleItem = () => (
-  <div className="justify-start font-['Nunito'] text-xs font-normal text-neutral-500">
-    Kani, pepino e maçã ou manga
+export const Subtitle: React.FC<RNode> = ({ children }) => (
+  <div className="justify-center text-sm leading-tight font-semibold text-neutral-800">
+    {children}
   </div>
 );
 
-export const AuxiliarSubtitle = () => (
-  <div className="justify-start text-right font-['Nunito'] text-xs font-bold text-neutral-500">
-    a partir de
+export const SubtitleItem: React.FC<RNode> = ({ children }) => (
+  <div className="justify-start text-xs font-normal text-neutral-500">
+    {children}
+  </div>
+);
+
+export const AuxiliarSubtitle: React.FC<RNode> = ({ children }) => (
+  <div className="justify-start text-right text-xs font-bold text-neutral-500">
+    {children}
   </div>
 );

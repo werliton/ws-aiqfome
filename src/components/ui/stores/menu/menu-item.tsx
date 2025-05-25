@@ -7,10 +7,16 @@ import {
 } from "../../collapsible";
 import { useState } from "react";
 import { CurrencyIcon } from "../../icons";
-import { SubItem } from "../../subitem/sub-item";
+import { Category } from "@/types";
+import { MenuSubitemList } from "./menu-subitem-list";
 
-export const MenuItem = () => {
+interface MenuItemProps {
+  category: Category;
+}
+
+export const MenuItem: React.FC<MenuItemProps> = ({ category }) => {
   const [open, setOpen] = useState(false);
+  const { name, description, productIds } = category;
   return (
     <Collapsible open={open} onOpenChange={setOpen} className="w-full">
       <CollapsibleTrigger asChild>
@@ -18,13 +24,13 @@ export const MenuItem = () => {
           <div className="flex flex-col gap-1">
             <div className="flex gap-1">
               <p className="text-foreground items-center justify-center text-base font-bold">
-                Niguiris
+                {name}
               </p>
 
               <CurrencyIcon />
             </div>
             <p className="text-secondary-foreground text-xs font-semibold">
-              um prato super refrescante de peixe fatiado e marinado com limão
+              {description}
             </p>
           </div>
           <button>
@@ -36,8 +42,8 @@ export const MenuItem = () => {
           </button>
         </div>
       </CollapsibleTrigger>
-      <CollapsibleContent className="flex px-4 pt-1 pb-3">
-        <SubItem isPromotion={false} />
+      <CollapsibleContent className="ml-2 flex flex-col gap-6 px-4 pt-1 pb-3">
+        <MenuSubitemList productIds={productIds} />
       </CollapsibleContent>
     </Collapsible>
   );

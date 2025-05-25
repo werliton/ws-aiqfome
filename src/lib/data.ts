@@ -15,7 +15,7 @@ const storeProperties = (item: Store) => ({
     })
 
 /**
- * 
+ * Lista todas as lojas
  */
 export function getAllStores(){
 
@@ -24,6 +24,9 @@ export function getAllStores(){
     return allStores as Store[]
 }
 
+/**
+ * Lista todas as lojas abertas
+ */
 export function getAllStoresOpened(){
 
     const opened = data
@@ -33,7 +36,9 @@ export function getAllStoresOpened(){
     return opened as Store[]
 }
 
-
+/**
+ * Lista todas as lojas fechadas
+ */
 export function getAllStoresClosed(){
 
     const closed = data
@@ -44,14 +49,14 @@ export function getAllStoresClosed(){
 }
 
 /**
- * 
+ * Lista todas as categorias de uma Loja especifica
  */
-export function getCategoryByStore(storeId: string){
+export function getAllCategoriesByStoreId(storeId: string){
     const foundStore = data.filter(item => item.id === storeId)
     
     if (foundStore.length === 0) return []
 
-    return foundStore[0]
+    return foundStore[0].categories
 }
 
 /**
@@ -63,4 +68,5 @@ export function getProductsById(storeId: string, productId: string){
     if (foundProducts.length === 0) return []
 
     return foundProducts[0].products.filter(product => product.id === productId)
+
 }

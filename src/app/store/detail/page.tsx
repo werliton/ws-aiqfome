@@ -7,9 +7,9 @@ export default function StoreDetail() {
     <div className="flex flex-col">
       <StoreInfo />
 
-      <StoreMenu />
-
-      <ScrollArea className="h-[calc(100%-260px)]"></ScrollArea>
+      <ScrollArea className="h-[calc(100%-260px)]">
+        <StoreMenu />
+      </ScrollArea>
     </div>
   );
 }

@@ -6,12 +6,12 @@ type Product = {
     id: string
     title: string
     description: string
-    price: number
+    price: number // price base
     image: string
     slug: string
 
     icon?: string
-    priceInPromotion?: number
+    priceDiscounted?: number
 }
 
 type Category = {
