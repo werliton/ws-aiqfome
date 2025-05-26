@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { RNode } from "@/components/ui/subtitle";
 import { Edit2, Minus, Plus } from "lucide-react";
 
-export const TiketFoodItemButtons = () => {
+export const TiketFoodItemButtons = ({ children }: RNode) => {
   return (
     <div
       data-promo-label="off"
@@ -23,34 +24,50 @@ export const TiketFoodItemButtons = () => {
             </div>
           </div>
         </div>
-        <div
-          data-status="default"
-          data-text-size="14pt"
-          className="flex items-center justify-center gap-1 rounded-lg"
-        >
-          <Button
-            variant="outline"
-            size="icon"
-            className="h-7 w-7 rounded-full p-1"
-          >
-            <Minus height={24} width={24} className="text-accent" />
-          </Button>
-          <div className="inline-flex h-7 w-7 flex-col items-center justify-center gap-2">
-            <div className="justify-start text-center text-sm leading-tight font-bold text-neutral-700">
-              2
-            </div>
-          </div>
-          <div className="flex items-center justify-end py-0.5 pl-1">
-            <Button
-              variant="outline"
-              size="icon"
-              className="h-7 w-7 rounded-full p-1"
-            >
-              <Plus height={24} width={24} className="text-accent" />
-            </Button>
-          </div>
-        </div>
+        {children}
       </div>
     </div>
   );
 };
+
+interface ControlsProps {
+  handleIncrement(): void;
+  handleDecrement(): void;
+  quantity: number;
+}
+
+TiketFoodItemButtons.Controls = ({
+  handleDecrement,
+  handleIncrement,
+  quantity,
+}: ControlsProps) => (
+  <div
+    data-status="default"
+    data-text-size="14pt"
+    className="flex items-center justify-center gap-1 rounded-lg"
+  >
+    <Button
+      variant="outline"
+      size="icon"
+      className="h-7 w-7 rounded-full p-1"
+      onChange={handleDecrement}
+    >
+      <Minus height={24} width={24} className="text-accent" />
+    </Button>
+    <div className="inline-flex h-7 w-7 flex-col items-center justify-center gap-2">
+      <div className="justify-start text-center text-sm leading-tight font-bold text-neutral-700">
+        {quantity}
+      </div>
+    </div>
+    <div className="flex items-center justify-end py-0.5 pl-1">
+      <Button
+        onChange={handleIncrement}
+        variant="outline"
+        size="icon"
+        className="h-7 w-7 rounded-full p-1"
+      >
+        <Plus height={24} width={24} className="text-accent" />
+      </Button>
+    </div>
+  </div>
+);

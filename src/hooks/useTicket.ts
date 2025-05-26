@@ -1,32 +1,17 @@
 import { ZusTicket } from "@/lib/store/ticket.store";
 import { currencyFormat } from "@/lib/utils";
-import { Product } from "@/types";
 
-export const useTicket = (product: Product) => {
+export const useTicket = () => {
     
-   const setTicket = ZusTicket.useSetTicket()
-   const incrementQuantity = ZusTicket.useIncrementQuantity()
-   const decrementQuantity = ZusTicket.useDecrementQuantity()
-   const { quantity, total } = ZusTicket.getItemInTicket(product.id)
-
-
-   function handleAddProduct() {
-      setTicket(product)
-   }
-
-   function handleAddQuantity() {
-      incrementQuantity(product)
-   }
-
-   function handleRemoveQuantity() {
-      decrementQuantity(product)
-   }
-
+   const items = ZusTicket.getAllItems()
+    
    return {
-    handleAddQuantity,
-    handleRemoveQuantity,
-    handleAddProduct,
-    total: currencyFormat(total),
-    quantity
+    items: items.map(item => ({
+        ...item,
+        total: currencyFormat(item.total)
+    })),
+    total: items.reduce((sum, item) => {
+        return sum + item.total
+    },0)
    }
 }

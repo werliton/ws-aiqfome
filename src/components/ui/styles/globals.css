@@ -111,7 +111,7 @@
   }
 
   button {
-    @apply hover:cursor-pointer
+    @apply hover:cursor-pointer hover:bg-transparent
   }
 
 }

@@ -1,74 +1,67 @@
 "use client";
 
+import { useTicket } from "@/hooks/useTicket";
 import { Divider } from "../../divider";
 import { Payment } from "../../molecules/payment";
 import { TicketHeader } from "./ticker-header";
 import { TicketFoodItem } from "./ticket-food-item/ticket-food-item";
-import { TicketFoodObs } from "./ticket-food-item/ticket-food-obs";
+
 import { TicketFootAditional } from "./ticket-food-item/ticket-foot-adicional-list";
 import { TiketFoodItemButtons } from "./ticket-food-item/tiket-food-item-buttons";
+import { Fragment } from "react";
 
 export const TicketContainer = () => {
   /**
-   * O QUE PRECISO:
-   * - Loja: nome e image
-   * - Carrinho: produto, total
-   * - actions: decrem e increm
+   * Algumas acoes nao implementadas por conta de nao estar no escopo
+   * da entrega
    */
+
+  const { items, total } = useTicket();
+
   return (
     <div className="flex flex-col items-center justify-start self-stretch py-6">
       <TicketHeader imagePath={"/images/stores/mat.png"}>
         <TicketHeader.Title>Burger King</TicketHeader.Title>
       </TicketHeader>
 
-      <TicketFoodItem>
-        <TicketFoodItem.Header>
-          <TicketFoodItem.Title>Ceviche de polvo</TicketFoodItem.Title>
-          <TicketFoodItem.Price>R$ 19,90</TicketFoodItem.Price>
-        </TicketFoodItem.Header>
+      {items.map((item) => (
+        <Fragment key={item.product?.id}>
+          <TicketFoodItem>
+            <TicketFoodItem.Header>
+              <TicketFoodItem.Title>{item.product?.title}</TicketFoodItem.Title>
+              <TicketFoodItem.Price>{item.total}</TicketFoodItem.Price>
+            </TicketFoodItem.Header>
 
-        <TiketFoodItemButtons />
+            <TiketFoodItemButtons>
+              <TiketFoodItemButtons.Controls
+                handleDecrement={() => {}}
+                handleIncrement={() => {}}
+                quantity={item.quantity}
+              />
+            </TiketFoodItemButtons>
 
-        <TicketFootAditional>
-          <TicketFootAditional.Title>tamanho</TicketFootAditional.Title>
-          <TicketFootAditional.Item>médio</TicketFootAditional.Item>
-        </TicketFootAditional>
+            <TicketFootAditional>
+              <TicketFootAditional.Title>tamanho</TicketFootAditional.Title>
+              <TicketFootAditional.Item>médio</TicketFootAditional.Item>
+            </TicketFootAditional>
 
-        <TicketFootAditional>
-          <TicketFootAditional.Title>
-            vai querer bebida?
-          </TicketFootAditional.Title>
-          <TicketFootAditional.Item aditionalPrice={"R$ 5,00"}>
-            coca-cola
-          </TicketFootAditional.Item>
-        </TicketFootAditional>
-      </TicketFoodItem>
+            <TicketFootAditional>
+              <TicketFootAditional.Title>
+                vai querer bebida?
+              </TicketFootAditional.Title>
+              <TicketFootAditional.Item aditionalPrice={"R$ 5,00"}>
+                coca-cola
+              </TicketFootAditional.Item>
+            </TicketFootAditional>
+          </TicketFoodItem>
 
-      <Divider />
+          <Divider />
+        </Fragment>
+      ))}
 
-      <TicketFoodItem>
-        <TicketFoodItem.Header>
-          <TicketFoodItem.Title>Temaki Filadélfia</TicketFoodItem.Title>
-          <TicketFoodItem.Price>R$ 25,90</TicketFoodItem.Price>
-        </TicketFoodItem.Header>
-
-        <TiketFoodItemButtons />
-
-        <TicketFootAditional>
-          <TicketFootAditional.Title>
-            escolha 3 ingredientes
-          </TicketFootAditional.Title>
-
-          <TicketFootAditional.Item>cream cheese</TicketFootAditional.Item>
-          <TicketFootAditional.Item>tomate seco</TicketFootAditional.Item>
-          <TicketFootAditional.Item>shimeji</TicketFootAditional.Item>
-        </TicketFootAditional>
-
-        {/* OPTIONAL */}
-        <TicketFoodObs>tirar cebolinha</TicketFoodObs>
-      </TicketFoodItem>
-
-      <Payment />
+      <Payment>
+        <Payment.Total>{total}</Payment.Total>
+      </Payment>
     </div>
   );
 };

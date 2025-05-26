@@ -1,6 +1,7 @@
 import { Button } from "../button";
+import { RNode } from "../subtitle";
 
-export const Payment = () => {
+export const Payment = ({ children }: RNode) => {
   return (
     <div
       data-action="checkout bottom"
@@ -12,9 +13,7 @@ export const Payment = () => {
           <div className="justify-center text-sm leading-tight font-bold text-neutral-800">
             subtotal
           </div>
-          <div className="justify-center text-xl font-extrabold text-purple-800">
-            R$ 112,00
-          </div>
+          {children}
         </div>
         <div className="justify-centerpx-10 flex h-12 w-48 items-center py-2.5">
           <Button className="bg-primary text-center text-sm leading-tight font-bold text-white">
@@ -25,3 +24,9 @@ export const Payment = () => {
     </div>
   );
 };
+
+Payment.Total = ({ children }: RNode) => (
+  <div className="justify-center text-xl font-extrabold text-purple-800">
+    {children}
+  </div>
+);

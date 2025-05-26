@@ -8,10 +8,12 @@ import {
   TextMedium,
   TextSecondary,
 } from "@/components/ui/title";
+import { useCart } from "@/hooks/useCart";
 import { useTicket } from "@/hooks/useTicket";
 import { getProductById } from "@/lib/data";
 import { currencyFormat } from "@/lib/utils";
 import Image from "next/image";
+import { useMemo } from "react";
 
 interface ProductInfoProps {
   productId: string;
@@ -22,7 +24,10 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
   productId,
   storeId,
 }) => {
-  const product = getProductById(storeId, productId);
+  const product = useMemo(
+    () => getProductById(storeId, productId),
+    [storeId, productId],
+  );
 
   if (!product) return null;
 
@@ -34,7 +39,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
     handleAddProduct,
     total,
     quantity,
-  } = useTicket(product);
+  } = useCart(product);
 
   return (
     <div className="flex flex-col items-start justify-start gap-4 self-stretch">

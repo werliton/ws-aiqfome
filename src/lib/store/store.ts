@@ -1,5 +1,6 @@
 import { Category } from '@/types'
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 /**
  * 1- guardar o id da loja selecionada
  */
@@ -11,16 +12,22 @@ interface State {
     setCategory: (category: Category) => void
 }
 
-const useStore = create<State>()(set => ({
-    storeId: '',
-    category: null,
-    setStoreId: (storeId: string) => set({
-        storeId
-    }),
-    setCategory: (category: Category) => set({
-        category
+const useStore = create<State>()(
+    persist(
+        (set) => ({
+            storeId: '',
+            category: null,
+            setStoreId: (storeId: string) => set({
+                storeId
+            }),
+            setCategory: (category: Category) => set({
+                category
+            })
+        }),
+    {
+        name: 'store-storage'
     })
-}))
+)
 
 // Selectors
 
