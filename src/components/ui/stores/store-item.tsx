@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 import { Card, CardHeader, CardTitle, CardDescription } from "../card";
 import Image from "next/image";
 import { Store } from "@/types";
@@ -33,6 +35,7 @@ const Delivery = ({ deliveryValue }: { deliveryValue: number }) => {
 
 export const StoreItem = ({ item }: StoreItemProps) => {
   const { image, name, delivery, review, open, hasPromotion, slug, id } = item;
+  const route = `${ROUTES.stores}/${id}`;
 
   return (
     <Card
@@ -52,7 +55,7 @@ export const StoreItem = ({ item }: StoreItemProps) => {
         />
         <div className="mx-3 flex flex-col gap-1">
           <CardTitle className="text-muted-foreground text-base font-bold">
-            {open ? <Link href={`${ROUTES.stores}/${id}`}>{name}</Link> : name}
+            {open ? <Link href={route}>{name}</Link> : name}
           </CardTitle>
           <CardDescription className="flex gap-2">
             <Delivery deliveryValue={delivery} />

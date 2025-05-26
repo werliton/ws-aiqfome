@@ -1,6 +1,8 @@
-import { getProductsById } from "@/lib/data";
+"use client";
+import { getProductById } from "@/lib/data";
 import { MenuSubItem } from "./menu-subitem";
 import { Product } from "@/types";
+import { Zus } from "@/lib/store/store";
 
 interface MenuSubitemListProps {
   productIds: string[];
@@ -11,10 +13,16 @@ export const MenuSubitemList: React.FC<MenuSubitemListProps> = ({
 }) => {
   const products: Product[] = [];
 
-  productIds.forEach((item) => {
-    const data = getProductsById("mat", item);
+  const storeId = Zus.getStoreId();
 
-    products.push(...data);
+  productIds.forEach((productId) => {
+    try {
+      const data = getProductById(storeId, productId);
+
+      if (data) products.push(data);
+    } catch (error) {
+      new Error("Erro ao buscar produto por slug");
+    }
   });
 
   return (

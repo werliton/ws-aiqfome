@@ -1,3 +1,4 @@
+"use client";
 import { Product } from "@/types";
 import { CurrencyIcon } from "../../icons";
 import { PriceBase, PriceDiscounted, PriceOriginal } from "../../price";
@@ -5,6 +6,7 @@ import { Subtitle, SubtitleItem } from "../../subtitle";
 import { currencyFormat } from "@/lib/utils";
 import Link from "next/link";
 import { ROUTES } from "@/lib/routes";
+import { Zus } from "@/lib/store/store";
 
 // = Extract<Product, 'price' | 'priceDiscounted' >
 interface PromotionProps {
@@ -39,14 +41,16 @@ interface MenuSubItemProps {
 }
 
 export const MenuSubItem: React.FC<MenuSubItemProps> = ({ product }) => {
-  const { title, description, price, priceDiscounted, slug } = product;
+  const { category, storeId } = Zus.getAll();
+
+  const { title, description, price, priceDiscounted, id } = product;
 
   const formattedPrice = currencyFormat(price);
   const formattedPriceDiscounted = priceDiscounted
     ? currencyFormat(priceDiscounted)
     : "";
 
-  const route = `${ROUTES.stores}/loja-name/category-name/${slug}`;
+  const route = `${ROUTES.stores}/${storeId}/${category?.id}/${id}`;
 
   return (
     <div className="flex flex-1 items-center justify-between gap-4">

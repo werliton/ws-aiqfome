@@ -1,0 +1,75 @@
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { PriceBase } from "@/components/ui/price";
+import {
+  TextExtraLarge,
+  TextMedium,
+  TextSecondary,
+} from "@/components/ui/title";
+import { getProductById } from "@/lib/data";
+import Image from "next/image";
+
+interface ProductInfoProps {
+  productId: string;
+  storeId: string;
+}
+
+export const ProductInfo: React.FC<ProductInfoProps> = ({
+  productId,
+  storeId,
+}) => {
+  const product = getProductById(storeId, productId);
+
+  if (!product) return null;
+
+  const { description, image, price, title } = product;
+
+  return (
+    <div className="flex flex-col items-start justify-start gap-4 self-stretch">
+      <div className="flex flex-col items-center justify-start gap-3 self-stretch overflow-hidden bg-white">
+        <Image
+          src={image}
+          width={390}
+          height={100}
+          alt="Picture of the product"
+          priority
+        />
+      </div>
+      <div className="flex flex-col items-start justify-start gap-1.5 self-stretch px-4">
+        <TextExtraLarge>{title}</TextExtraLarge>
+
+        <div className="inline-flex items-center justify-start gap-2">
+          <div className="justify-start text-sm font-extrabold text-neutral-500">
+            a partir de
+          </div>
+
+          <Label asChild className="text-lg font-extrabold">
+            <PriceBase>R$ {price}</PriceBase>
+          </Label>
+        </div>
+        <TextSecondary>{description}</TextSecondary>
+      </div>
+      <div className="inline-flex items-center justify-between self-stretch px-4 py-2">
+        <div className="inline-flex flex-col items-start justify-start gap-1.5">
+          <TextMedium>quantos?</TextMedium>
+
+          <div className="inline-flex items-start justify-start gap-1">
+            <div className="justify-center text-center text-sm leading-tight font-semibold text-neutral-500">
+              total
+            </div>
+
+            <Label
+              asChild
+              className="text-sm leading-tight font-bold text-neutral-700"
+            >
+              <PriceBase>R$ 15,00</PriceBase>
+            </Label>
+          </div>
+        </div>
+        <Button className="bg-neutral-500 px-6 py-2.5 text-sm leading-tight font-bold text-white">
+          adicionar
+        </Button>
+      </div>
+    </div>
+  );
+};

@@ -1,45 +1,11 @@
+"use client";
 import { ChevronRight } from "lucide-react";
-import Image from "next/image";
-import { DeliveryIcon, DotMini, StarIcon, Heart, Share } from "../../icons";
-import { TextExtraLarge } from "../../title";
+
+import { DeliveryIcon, DotMini, StarIcon } from "../../icons";
+
 import { getStoreById } from "@/lib/data";
-import { Store } from "@/types";
-
-interface TitleProps {
-  store: Store;
-}
-
-const Title: React.FC<TitleProps> = ({ store }) => (
-  <div className="flex flex-col items-start gap-2">
-    <div className="flex items-center gap-2">
-      <Image
-        className="dark:invert"
-        src={store.image}
-        alt="mat"
-        width={36}
-        height={36}
-        priority
-      />
-      <TextExtraLarge>{store.name}</TextExtraLarge>
-    </div>
-    {/* subtitle */}
-    <div className="flex w-full items-center justify-between">
-      {/* right icons */}
-      <div className="flex items-start gap-3">
-        <Share className="text-primary" />
-
-        <Heart className="text-primary" />
-      </div>
-      {/* buttons */}
-      <div className="flex h-6 items-center gap-2">
-        <span className="text-accent text-center text-xs font-bold">
-          Mais infos
-        </span>
-        <ChevronRight className="text-accent" height={8} width={8} />
-      </div>
-    </div>
-  </div>
-);
+import { Zus } from "@/lib/store/store";
+import { InfoTitle } from "./store-info-title";
 
 const InfoRow = ({ children }: { children: React.ReactNode }) => (
   <div className="flex items-center gap-1.5">{children}</div>
@@ -126,9 +92,12 @@ export const StoreInfo: React.FC<StoreInfoProps> = ({ storeId }) => {
 
   const data = getStoreById(storeId);
 
+  const setStoreId = Zus.useSetStoreId();
+  setStoreId(storeId);
+
   return (
     <div className="flex flex-col gap-1.5 px-4 py-6">
-      <Title store={data} />
+      <InfoTitle store={data} />
       {/* delivery info */}
       <Info />
       {/* category list */}
