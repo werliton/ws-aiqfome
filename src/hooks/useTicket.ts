@@ -1,11 +1,11 @@
 import { ZusTicket } from "@/lib/store/ticket.store";
 import { currencyFormat } from "@/lib/utils";
-import { Store } from "@/types";
 
 export const useTicket = () => {
     
    const items = ZusTicket.useGetAllItems()
-   const { image, name } = ZusTicket.useGetShop() as Store
+   const image = ZusTicket.useGetShopImage()
+   const name = ZusTicket.useGetShopName()
     
    return {
     items: items.map(item => ({
