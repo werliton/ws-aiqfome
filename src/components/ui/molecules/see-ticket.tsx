@@ -1,7 +1,14 @@
+"use client";
 import { Button } from "../button";
 import Link from "next/link";
+import { ZusTicket } from "@/lib/store/ticket.store";
 
-export const SeeTicket = () => {
+export const SeeTicket = ({ productId }: { productId: string }) => {
+  // TODO: PEGAR A QTD DO PRODUTO SELECIONADO
+  const { quantity } = ZusTicket.getItemInTicket(productId);
+
+  if (quantity === 0) return null;
+
   return (
     <div
       data-action="loja - ver ticket"

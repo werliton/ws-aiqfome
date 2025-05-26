@@ -89,7 +89,7 @@ export default async function Product({
       />
 
       {/* BOTAO FLUTUANTE VAI APARECER SOMENTE QUANDO TIVER ITENS NO CARRINHO */}
-      <SeeTicket />
+      <SeeTicket productId={product} />
     </div>
   );
 }

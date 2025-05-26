@@ -8,7 +8,7 @@ import {
   TextMedium,
   TextSecondary,
 } from "@/components/ui/title";
-import { useCart } from "@/hooks/useCart";
+import { useTicket } from "@/hooks/useTicket";
 import { getProductById } from "@/lib/data";
 import { currencyFormat } from "@/lib/utils";
 import Image from "next/image";
@@ -28,8 +28,13 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
 
   const { description, image, price, title } = product;
 
-  const { handleAddQuantity, handleRemoveQuantity, total, quantity } =
-    useCart(price);
+  const {
+    handleAddQuantity,
+    handleRemoveQuantity,
+    handleAddProduct,
+    total,
+    quantity,
+  } = useTicket(product);
 
   return (
     <div className="flex flex-col items-start justify-start gap-4 self-stretch">
@@ -82,7 +87,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
         ) : (
           <Button
             className="bg-neutral-500 px-6 py-2.5 text-sm leading-tight font-bold text-white"
-            onClick={handleAddQuantity}
+            onClick={handleAddProduct}
           >
             Adicionar
           </Button>
