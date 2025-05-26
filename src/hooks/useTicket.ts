@@ -4,7 +4,8 @@ import { currencyFormat } from "@/lib/utils";
 export const useTicket = () => {
     
    const items = ZusTicket.useGetAllItems()
-   const { image, name } = ZusTicket.useGetShop()
+   const image = ZusTicket.useGetShopImage()
+   const name = ZusTicket.useGetShopName()
     
    return {
     items: items.map(item => ({

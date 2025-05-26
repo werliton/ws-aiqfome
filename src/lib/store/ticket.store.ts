@@ -107,7 +107,8 @@ const useGetItemInTicket = (productId: string) => useTicketStore(state => {
     return foundProduct
 })
 const useGetAllItems = () => useTicketStore(state => state.items)
-const useGetShop = () => useTicketStore(state => state.shop)
+const useGetShopImage = () => useTicketStore(state => state.shop.image)
+const useGetShopName = () => useTicketStore(state => state.shop.name)
 
 const useIncrementQuantity = () => useTicketStore(state => state.incrementQuantity)
 const useDecrementQuantity = () => useTicketStore(state => state.decrementQuantity)
@@ -120,5 +121,6 @@ export const ZusTicket = {
     useDecrementQuantity,
     useSetTicket,
     useGetAllItems,
-    useGetShop
+    useGetShopImage,
+    useGetShopName
 }
