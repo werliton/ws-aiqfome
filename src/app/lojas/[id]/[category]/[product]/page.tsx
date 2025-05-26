@@ -9,9 +9,9 @@ import { Divider } from "@/components/ui/divider";
 export default async function Product({
   params,
 }: {
-  params: Promise<{ product: string; id: string; category: string }>;
+  params: Promise<{ product: string; id: string }>;
 }) {
-  const { product, id, category } = await params;
+  const { product, id } = await params;
 
   return (
     <div className="flex flex-1 flex-col items-center justify-start gap-4 pb-6">
