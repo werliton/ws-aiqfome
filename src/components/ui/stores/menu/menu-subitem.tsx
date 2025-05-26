@@ -7,6 +7,7 @@ import { currencyFormat } from "@/lib/utils";
 import Link from "next/link";
 import { ROUTES } from "@/lib/routes";
 import { Zus } from "@/lib/store/store";
+import { useMenuSubItem } from "@/hooks/useMenuSubItem";
 
 // = Extract<Product, 'price' | 'priceDiscounted' >
 interface PromotionProps {
@@ -41,22 +42,20 @@ interface MenuSubItemProps {
 }
 
 export const MenuSubItem: React.FC<MenuSubItemProps> = ({ product }) => {
-  const { category, storeId } = Zus.getAll();
-
-  const { title, description, price, priceDiscounted, id } = product;
-
-  const formattedPrice = currencyFormat(price);
-  const formattedPriceDiscounted = priceDiscounted
-    ? currencyFormat(priceDiscounted)
-    : "";
-
-  const route = `${ROUTES.stores}/${storeId}/${category?.id}/${id}`;
+  const {
+    title,
+    description,
+    formattedPrice,
+    formattedPriceDiscounted,
+    goToProductDetail,
+    priceDiscounted,
+  } = useMenuSubItem(product);
 
   return (
     <div className="flex flex-1 items-center justify-between gap-4">
       <div className="inline-flex flex-1 flex-col items-start justify-start gap-0.5">
         <div className="inline-flex items-center justify-start gap-1">
-          <Link href={route}>
+          <Link href={goToProductDetail}>
             <Subtitle>{title}</Subtitle>
           </Link>
         </div>

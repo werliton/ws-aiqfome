@@ -68,13 +68,19 @@ export function getAllCategoriesByStoreId(storeId: string){
 }
 
 /**
- * 
+ * Lista 
  */
-export function getProductsById(storeId: string, productId: string){
-    const foundProducts = data.filter(item => item.id === storeId)
+export function getProductById(storeId: string, productId: string){
     
-    if (foundProducts.length === 0) return []
 
-    return foundProducts[0].products.filter(product => product.id === productId)
+    const foundStore = data.filter(item => item.id === storeId)
+    
+    if (foundStore.length === 0) return null
+
+    const foundProducts = foundStore[0].products.filter(product => product.id === productId)
+    
+    if (foundProducts.length === 0) return null
+
+    return foundProducts[0]
 
 }

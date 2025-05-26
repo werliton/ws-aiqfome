@@ -3,9 +3,8 @@ import { ChevronRight } from "lucide-react";
 
 import { DeliveryIcon, DotMini, StarIcon } from "../../icons";
 
-import { getStoreById } from "@/lib/data";
-import { Zus } from "@/lib/store/store";
 import { InfoTitle } from "./store-info-title";
+import { useStoreInfo } from "@/hooks/useStoreInfo";
 
 const InfoRow = ({ children }: { children: React.ReactNode }) => (
   <div className="flex items-center gap-1.5">{children}</div>
@@ -90,10 +89,7 @@ interface StoreInfoProps {
 export const StoreInfo: React.FC<StoreInfoProps> = ({ storeId }) => {
   if (!storeId) return null;
 
-  const data = getStoreById(storeId);
-
-  const setStoreId = Zus.useSetStoreId();
-  setStoreId(storeId);
+  const data = useStoreInfo(storeId);
 
   return (
     <div className="flex flex-col gap-1.5 px-4 py-6">

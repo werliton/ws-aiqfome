@@ -1,15 +1,12 @@
 "use client";
 
-import { getAllCategoriesByStoreId } from "@/lib/data";
 import { Divider } from "../../divider";
 import { MenuItem } from "../menu/menu-item";
 import { Fragment } from "react";
-import { Zus } from "@/lib/store/store";
+import { useStoreMenu } from "@/hooks/useStoreMenu";
 
 export const StoreMenu = () => {
-  const storeId = Zus.getStoreId();
-
-  const data = getAllCategoriesByStoreId(storeId);
+  const data = useStoreMenu();
 
   return (
     <div className="inline-flex w-full flex-col items-center justify-start gap-1">

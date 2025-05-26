@@ -3,7 +3,7 @@ export const dynamic = "force-static";
 import { Card, CardHeader, CardTitle, CardDescription } from "../card";
 import Image from "next/image";
 import { Store } from "@/types";
-import { cn, currencyFormat } from "@/lib/utils";
+import { cn, currencyFormat, getStoreRoute } from "@/lib/utils";
 import { Dot } from "lucide-react";
 import { DeliveryIcon, DeliveryMotoIcon, StarIcon } from "../icons";
 import Link from "next/link";
@@ -35,7 +35,7 @@ const Delivery = ({ deliveryValue }: { deliveryValue: number }) => {
 
 export const StoreItem = ({ item }: StoreItemProps) => {
   const { image, name, delivery, review, open, hasPromotion, slug, id } = item;
-  const route = `${ROUTES.stores}/${id}`;
+  const route = getStoreRoute(id);
 
   return (
     <Card

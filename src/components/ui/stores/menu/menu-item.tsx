@@ -10,18 +10,16 @@ import { CurrencyIcon } from "../../icons";
 import { Category } from "@/types";
 import { MenuSubitemList } from "./menu-subitem-list";
 import { Zus } from "@/lib/store/store";
+import { useMenuItem } from "@/hooks/useMenuItem";
 
 interface MenuItemProps {
   category: Category;
 }
 
 export const MenuItem: React.FC<MenuItemProps> = ({ category }) => {
-  const setCategory = Zus.useSetCategory();
+  const { open, setOpen } = useMenuItem(category);
 
-  const [open, setOpen] = useState(false);
   const { name, description, productIds } = category;
-
-  setCategory(category);
 
   return (
     <Collapsible open={open} onOpenChange={setOpen} className="w-full">
