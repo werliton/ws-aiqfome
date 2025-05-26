@@ -1,6 +1,6 @@
 import { Checkbox } from "@/components/ui/atoms/checkbox";
-import { Label } from "@/components/ui/label";
-import { PricePlus } from "@/components/ui/price";
+import { Label } from "@/components/ui/atoms/label";
+import { PricePlus } from "@/components/ui/atoms/price";
 import { RNode } from "@/components/ui/atoms/subtitle";
 import { ReactNode } from "react";
 

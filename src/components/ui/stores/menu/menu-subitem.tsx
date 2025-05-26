@@ -1,10 +1,10 @@
 "use client";
 import { Product } from "@/types";
-import { CurrencyIcon } from "../../icons";
-import { PriceBase, PriceDiscounted, PriceOriginal } from "../../price";
-import { Subtitle, SubtitleItem } from "../../subtitle";
+import { CurrencyIcon } from "../../atoms/icons";
+import { Subtitle, SubtitleItem } from "../../atoms/subtitle";
 import Link from "next/link";
 import { useMenuSubItem } from "@/hooks/useMenuSubItem";
+import { PriceOriginal, PriceDiscounted, PriceBase } from "../../atoms/price";
 
 // = Extract<Product, 'price' | 'priceDiscounted' >
 interface PromotionProps {

@@ -1,4 +1,4 @@
-import { PriceBase } from "../../../price";
+import { PriceBase } from "@/components/ui/atoms/price";
 import { RNode } from "@/components/ui/atoms/subtitle";
 
 export const TicketFoodItem = ({ children }: RNode) => {
