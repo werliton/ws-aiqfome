@@ -87,9 +87,9 @@ interface StoreInfoProps {
 }
 
 export const StoreInfo: React.FC<StoreInfoProps> = ({ storeId }) => {
-  if (!storeId) return null;
-
   const data = useStoreInfo(storeId);
+
+  if (!storeId) return null;
 
   return (
     <div className="flex flex-col gap-1.5 px-4 py-6">

@@ -5,7 +5,7 @@ import { ZusTicket } from "@/lib/store/ticket.store";
 
 export const SeeTicket = ({ productId }: { productId: string }) => {
   // TODO: PEGAR A QTD DO PRODUTO SELECIONADO
-  const { quantity } = ZusTicket.getItemInTicket(productId);
+  const { quantity } = ZusTicket.useGetItemInTicket(productId);
 
   if (quantity === 0) return null;
 

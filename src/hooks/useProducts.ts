@@ -5,17 +5,12 @@ import { Product } from "@/types";
 export function useProducts(productIds: string[]) {
     const products: Product[] = [];
 
-    const storeId = Zus.getStoreId();
+    const storeId = Zus.useGetStoreId();
 
     productIds.forEach((productId) => {
-        try {
         const data = getProductById(storeId, productId);
 
         if (data) products.push(data);
-
-        } catch (error) {
-            new Error("Erro ao buscar produto por slug");
-        }
     });
 
     return {

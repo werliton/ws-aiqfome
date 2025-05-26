@@ -15,7 +15,7 @@ export const TicketFootAditional = ({ children }: RNode) => {
   );
 };
 
-TicketFootAditional.Title = ({ children }: RNode) => (
+const TicketFootAditionalTitle = ({ children }: RNode) => (
   <div className="inline-flex items-start justify-start gap-1">
     <div className="justify-start text-xs font-bold text-neutral-500">•</div>
     <div className="justify-start text-xs font-bold text-neutral-500">
@@ -29,7 +29,7 @@ interface ItemProps {
 
   aditionalPrice?: string;
 }
-TicketFootAditional.Item = ({ children, aditionalPrice }: ItemProps) => (
+const TicketFootAditionalItem = ({ children, aditionalPrice }: ItemProps) => (
   <div className="ml-2 inline-flex w-80 items-start justify-start gap-2">
     <div className="flex items-center justify-start gap-1">
       <div className="justify-start text-xs font-semibold text-neutral-500">
@@ -40,3 +40,6 @@ TicketFootAditional.Item = ({ children, aditionalPrice }: ItemProps) => (
     {aditionalPrice && <PricePlus>{aditionalPrice}</PricePlus>}
   </div>
 );
+
+TicketFootAditional.Title = TicketFootAditionalTitle;
+TicketFootAditional.Item = TicketFootAditionalItem;

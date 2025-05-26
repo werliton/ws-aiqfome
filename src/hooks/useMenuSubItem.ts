@@ -3,7 +3,7 @@ import { currencyFormat, getProductDetailRoute } from "@/lib/utils";
 import { Product } from "@/types";
 
 export function useMenuSubItem(product:Product) {
-    const { category, storeId } = Zus.getAll();
+    const { category, storeId } = Zus.useGetAll();
     
     const { title, description, price, priceDiscounted, id } = product;
     

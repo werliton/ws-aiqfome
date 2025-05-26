@@ -7,7 +7,7 @@ import { TicketHeader } from "./ticker-header";
 import { TicketFoodItem } from "./ticket-food-item/ticket-food-item";
 
 import { TicketFootAditional } from "./ticket-food-item/ticket-foot-adicional-list";
-import { TiketFoodItemButtons } from "./ticket-food-item/tiket-food-item-buttons";
+import { TicketFoodItemButtons } from "./ticket-food-item/ticket-food-item-buttons";
 import { Fragment } from "react";
 
 export const TicketContainer = () => {
@@ -32,13 +32,13 @@ export const TicketContainer = () => {
               <TicketFoodItem.Price>{item.total}</TicketFoodItem.Price>
             </TicketFoodItem.Header>
 
-            <TiketFoodItemButtons>
-              <TiketFoodItemButtons.Controls
+            <TicketFoodItemButtons>
+              <TicketFoodItemButtons.Controls
                 handleDecrement={() => {}}
                 handleIncrement={() => {}}
                 quantity={item.quantity}
               />
-            </TiketFoodItemButtons>
+            </TicketFoodItemButtons>
 
             <TicketFootAditional>
               <TicketFootAditional.Title>tamanho</TicketFootAditional.Title>

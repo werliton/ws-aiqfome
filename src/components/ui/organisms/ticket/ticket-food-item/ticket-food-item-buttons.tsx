@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { RNode } from "@/components/ui/subtitle";
 import { Edit2, Minus, Plus } from "lucide-react";
 
-export const TiketFoodItemButtons = ({ children }: RNode) => {
+export const TicketFoodItemButtons = ({ children }: RNode) => {
   return (
     <div
       data-promo-label="off"
@@ -36,7 +36,7 @@ interface ControlsProps {
   quantity: number;
 }
 
-TiketFoodItemButtons.Controls = ({
+const TicketFoodItemButtonsControls = ({
   handleDecrement,
   handleIncrement,
   quantity,
@@ -71,3 +71,5 @@ TiketFoodItemButtons.Controls = ({
     </div>
   </div>
 );
+
+TicketFoodItemButtons.Controls = TicketFoodItemButtonsControls;

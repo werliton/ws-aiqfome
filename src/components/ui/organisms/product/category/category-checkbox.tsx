@@ -1,8 +1,6 @@
 import { Checkbox } from "@/components/ui/checkbox";
-import { CurrencyIcon } from "@/components/ui/icons";
 import { Label } from "@/components/ui/label";
-import { PriceBase, PricePlus } from "@/components/ui/price";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { PricePlus } from "@/components/ui/price";
 import { RNode } from "@/components/ui/subtitle";
 import { ReactNode } from "react";
 
@@ -18,7 +16,7 @@ interface HeaderProps {
   children: ReactNode;
   subtitle: string;
 }
-CategoryCheckbox.Header = ({ children, subtitle }: HeaderProps) => (
+const CategoryCheckboxHeader = ({ children, subtitle }: HeaderProps) => (
   <div className="inline-flex items-center justify-start gap-2 self-stretch">
     <div className="inline-flex flex-1 flex-col items-start justify-start gap-0.5">
       <div className="justify-start self-stretch text-base font-bold text-neutral-800">
@@ -44,7 +42,7 @@ CategoryCheckbox.Header = ({ children, subtitle }: HeaderProps) => (
   </div>
 );
 
-CategoryCheckbox.List = ({ children }: RNode) => (
+const CategoryCheckboxList = ({ children }: RNode) => (
   <div className="flex flex-col items-start justify-start gap-3">
     {children}
   </div>
@@ -53,7 +51,7 @@ interface ListItemProps {
   value: string;
 }
 
-CategoryCheckbox.ListItem = ({ value }: ListItemProps) => (
+const CategoryCheckboxListItem = ({ value }: ListItemProps) => (
   <div className="inline-flex w-80 items-center justify-start gap-4 py-1">
     <div
       data-position="left"
@@ -74,7 +72,7 @@ interface ListItemWihtPriceProps extends ListItemProps {
   children: ReactNode;
 }
 
-CategoryCheckbox.ListItemWihtPrice = ({
+const CategoryCheckboxListItemWihtPrice = ({
   children,
   value,
 }: ListItemWihtPriceProps) => (
@@ -96,3 +94,8 @@ CategoryCheckbox.ListItemWihtPrice = ({
     </div>
   </div>
 );
+
+CategoryCheckbox.ListItemWihtPrice = CategoryCheckboxListItemWihtPrice;
+CategoryCheckbox.ListItem = CategoryCheckboxListItem;
+CategoryCheckbox.List = CategoryCheckboxList;
+CategoryCheckbox.Header = CategoryCheckboxHeader;

@@ -1,6 +1,5 @@
 import { CurrencyIcon } from "@/components/ui/icons";
 import { Label } from "@/components/ui/label";
-import { PriceBase } from "@/components/ui/price";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { RNode } from "@/components/ui/subtitle";
 import { ReactNode } from "react";
@@ -17,7 +16,7 @@ interface HeaderProps {
   children: ReactNode;
   subtitle: string;
 }
-CategoryRadio.Header = ({ children, subtitle }: HeaderProps) => (
+const CategoryRadioHeader = ({ children, subtitle }: HeaderProps) => (
   <div className="inline-flex items-center justify-start gap-2 self-stretch">
     <div className="inline-flex flex-1 flex-col items-start justify-start gap-0.5">
       <div className="justify-start self-stretch text-base font-bold text-neutral-800">
@@ -43,7 +42,7 @@ CategoryRadio.Header = ({ children, subtitle }: HeaderProps) => (
   </div>
 );
 
-CategoryRadio.List = ({ children }: RNode) => (
+const CategoryRadioList = ({ children }: RNode) => (
   <div className="flex flex-col items-start justify-start gap-3">
     <RadioGroup>{children}</RadioGroup>
   </div>
@@ -53,7 +52,7 @@ interface ListItemProps {
   priceBase: string;
 }
 
-CategoryRadio.ListItem = ({ children, priceBase }: ListItemProps) => (
+const CategoryRadioListItem = ({ children, priceBase }: ListItemProps) => (
   <div className="inline-flex w-80 items-center justify-start gap-4 py-1">
     <RadioGroupItem value={priceBase} id={priceBase} />
     <Label htmlFor={priceBase} className="flex flex-1 justify-between">
@@ -72,7 +71,7 @@ CategoryRadio.ListItem = ({ children, priceBase }: ListItemProps) => (
   </div>
 );
 
-CategoryRadio.ListItemNoPrice = ({ value }: { value: string }) => (
+const CategoryRadioListItemNoPrice = ({ value }: { value: string }) => (
   <div className="inline-flex w-80 items-center justify-start gap-4 py-1">
     <RadioGroupItem value={value} id={value} />
     <Label htmlFor={value}>
@@ -91,7 +90,7 @@ interface PromotionListItemProps extends ListItemProps {
   priceDiscounted: string;
 }
 
-CategoryRadio.PromotionListItem = ({
+const CategoryRadioPromotionListItem = ({
   children,
   priceBase,
   priceDiscounted,
@@ -122,3 +121,9 @@ CategoryRadio.PromotionListItem = ({
     </Label>
   </div>
 );
+
+CategoryRadio.Header = CategoryRadioHeader;
+CategoryRadio.List = CategoryRadioList;
+CategoryRadio.ListItem = CategoryRadioListItem;
+CategoryRadio.ListItemNoPrice = CategoryRadioListItemNoPrice;
+CategoryRadio.PromotionListItem = CategoryRadioPromotionListItem;
