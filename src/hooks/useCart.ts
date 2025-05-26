@@ -1,22 +1,30 @@
+import { ZusTicket } from "@/lib/store/ticket.store";
 import { currencyFormat } from "@/lib/utils";
-import { useCallback, useState } from "react";
+import { Product, Store } from "@/types";
 
-export const useCart = (price: number) => {
-    const [quantity, setQuantity] = useState(0);
- 
-   const handleAddQuantity = useCallback(() => {
-     setQuantity((prev) => prev + 1);
-   }, []);
- 
-   const handleRemoveQuantity = useCallback(() => {
-     setQuantity((prev) => prev - 1);
-   }, []);
- 
-   const total = price * quantity
+export const useCart = (product: Product, store: Store) => {
+    
+   const setTicket = ZusTicket.useSetTicket()
+   const incrementQuantity = ZusTicket.useIncrementQuantity()
+   const decrementQuantity = ZusTicket.useDecrementQuantity()
+   const { quantity, total } = ZusTicket.getItemInTicket(product.id)
+
+   function handleAddProduct() {
+      setTicket(product, store)
+   }
+
+   function handleAddQuantity() {
+      incrementQuantity(product)
+   }
+
+   function handleRemoveQuantity() {
+      decrementQuantity(product)
+   }
 
    return {
     handleAddQuantity,
     handleRemoveQuantity,
+    handleAddProduct,
     total: currencyFormat(total),
     quantity
    }

@@ -7,7 +7,6 @@ import { cn, currencyFormat, getStoreRoute } from "@/lib/utils";
 import { Dot } from "lucide-react";
 import { DeliveryIcon, DeliveryMotoIcon, StarIcon } from "../icons";
 import Link from "next/link";
-import { ROUTES } from "@/lib/routes";
 
 interface StoreItemProps {
   item: Store;

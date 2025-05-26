@@ -1,4 +1,4 @@
-import { Plus, Trash2 } from "lucide-react";
+import { Minus, Plus, Trash2 } from "lucide-react";
 import React from "react";
 import { Button } from "../button";
 
@@ -22,7 +22,11 @@ export const AddProduct = ({
           className="rounded-full border hover:bg-transparent"
           onClick={handleRemoveQuantity}
         >
-          <Trash2 height={32} width={32} className="text-accent" />
+          {quantity === 1 ? (
+            <Trash2 height={32} width={32} className="text-accent" />
+          ) : (
+            <Minus height={32} width={32} className="text-accent" />
+          )}
         </Button>
       </div>
       <div className="inline-flex h-7 w-8 flex-col items-center justify-center gap-2">
