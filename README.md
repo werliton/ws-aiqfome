@@ -116,3 +116,4 @@ MIT
 
 - https://oklch.com
 - https://extensions.zeplin.io/
+- Cuidado ao usar icones do Lucid. Eles podem limitar a alterar de tamanhao, devido ao viewbox.

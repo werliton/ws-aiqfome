@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Nunito, Nunito_Sans } from "next/font/google";
-import "./globals.css";
+import "@/components/ui/styles/globals.css";
+import { Header } from "@/components/ui/layout/header/header";
+import { Footer } from "@/components/ui/layout/footer/footer";
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
@@ -24,11 +26,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-screen">
       <body
-        className={`${nunitoMono.variable} ${nunitoSans.variable} antialiased`}
+        className={`${nunitoMono.variable} ${nunitoSans.variable} flex h-screen flex-col antialiased`}
       >
-        {children}
+        <Header />
+        <main className="bg-background m-auto w-full max-w-[390px] flex-1">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
