@@ -16,12 +16,12 @@ export const TicketContainer = () => {
    * da entrega
    */
 
-  const { items, total } = useTicket();
+  const { items, total, shop } = useTicket();
 
   return (
     <div className="flex flex-col items-center justify-start self-stretch py-6">
-      <TicketHeader imagePath={"/images/stores/mat.png"}>
-        <TicketHeader.Title>Burger King</TicketHeader.Title>
+      <TicketHeader imagePath={shop.image}>
+        <TicketHeader.Title>{shop.name}</TicketHeader.Title>
       </TicketHeader>
 
       {items.map((item) => (

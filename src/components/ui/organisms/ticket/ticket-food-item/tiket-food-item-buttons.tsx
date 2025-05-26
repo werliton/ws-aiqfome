@@ -47,9 +47,9 @@ TiketFoodItemButtons.Controls = ({
     className="flex items-center justify-center gap-1 rounded-lg"
   >
     <Button
-      variant="outline"
+      variant="ghost"
       size="icon"
-      className="h-7 w-7 rounded-full p-1"
+      className="h-7 w-7 rounded-full border hover:bg-transparent"
       onChange={handleDecrement}
     >
       <Minus height={24} width={24} className="text-accent" />
@@ -64,7 +64,7 @@ TiketFoodItemButtons.Controls = ({
         onChange={handleIncrement}
         variant="outline"
         size="icon"
-        className="h-7 w-7 rounded-full p-1"
+        className="h-7 w-7 rounded-full border hover:bg-transparent"
       >
         <Plus height={24} width={24} className="text-accent" />
       </Button>

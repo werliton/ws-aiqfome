@@ -1,8 +1,8 @@
 import { ZusTicket } from "@/lib/store/ticket.store";
 import { currencyFormat } from "@/lib/utils";
-import { Product } from "@/types";
+import { Product, Store } from "@/types";
 
-export const useCart = (product: Product) => {
+export const useCart = (product: Product, store: Store) => {
     
    const setTicket = ZusTicket.useSetTicket()
    const incrementQuantity = ZusTicket.useIncrementQuantity()
@@ -10,7 +10,7 @@ export const useCart = (product: Product) => {
    const { quantity, total } = ZusTicket.getItemInTicket(product.id)
 
    function handleAddProduct() {
-      setTicket(product)
+      setTicket(product, store)
    }
 
    function handleAddQuantity() {

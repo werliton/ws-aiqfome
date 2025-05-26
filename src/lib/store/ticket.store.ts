@@ -1,4 +1,4 @@
-import { Product } from '@/types'
+import { Product, Store } from '@/types'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
@@ -10,7 +10,8 @@ type Item = {
 
 type TickerState = {
     items: Item[]
-    setTicket(product: Product): void
+    shop: Store | null
+    setTicket(product: Product, shop: Store): void
     incrementQuantity(product: Product): void
     decrementQuantity(product: Product): void
 }
@@ -28,16 +29,21 @@ const STATE_RESET: Item = {
     quantity: 0,
     total: 0
 }
+/**
+ * TODO: Remover loja do ZusStore quando quantity for zero
+ */
 
 export const useTicketStore = create<TickerState>()(
     persist((set) => ({
         items: [],
-        setTicket: (product: Product) => set((state) => ({
+        shop: null,
+        setTicket: (product, shop) => set((state) => ({
             items: [...state.items, {
                 product,
                 quantity:1,
                 total: product.price
-            }]
+            }],
+            shop
         })),
         incrementQuantity: (product: Product) => set((state) => {
             const { id, price } = product
@@ -70,7 +76,7 @@ export const useTicketStore = create<TickerState>()(
                         }
                     }
                     return item
-                }).filter(item => item.product !== null)
+                }).filter(item => item.product !== null),
             }
         })
     }),
@@ -89,6 +95,7 @@ const getItemInTicket = (productId: string) => useTicketStore(state => {
     return foundProduct
 })
 const getAllItems = () => useTicketStore(state => state.items)
+const getShop = () => useTicketStore(state => state.shop)
 
 const useIncrementQuantity = () => useTicketStore(state => state.incrementQuantity)
 const useDecrementQuantity = () => useTicketStore(state => state.decrementQuantity)
@@ -100,5 +107,6 @@ export const ZusTicket = {
     useIncrementQuantity,
     useDecrementQuantity,
     useSetTicket,
-    getAllItems
+    getAllItems,
+    getShop
 }

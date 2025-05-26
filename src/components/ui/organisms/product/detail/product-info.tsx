@@ -9,8 +9,7 @@ import {
   TextSecondary,
 } from "@/components/ui/title";
 import { useCart } from "@/hooks/useCart";
-import { useTicket } from "@/hooks/useTicket";
-import { getProductById } from "@/lib/data";
+import { getProductById, getStoreById } from "@/lib/data";
 import { currencyFormat } from "@/lib/utils";
 import Image from "next/image";
 import { useMemo } from "react";
@@ -29,7 +28,9 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
     [storeId, productId],
   );
 
-  if (!product) return null;
+  const store = useMemo(() => getStoreById(storeId), [storeId]);
+
+  if (!product || !store) return null;
 
   const { description, image, price, title } = product;
 
@@ -39,7 +40,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
     handleAddProduct,
     total,
     quantity,
-  } = useCart(product);
+  } = useCart(product, store);
 
   return (
     <div className="flex flex-col items-start justify-start gap-4 self-stretch">
