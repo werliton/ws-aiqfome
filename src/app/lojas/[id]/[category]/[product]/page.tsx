@@ -4,6 +4,7 @@ import { CategoryCheckbox } from "@/components/ui/organisms/product/category/cat
 import { Textarea } from "@/components/ui/textarea";
 import { SeeTicket } from "@/components/ui/molecules/see-ticket";
 import { ProductInfo } from "@/components/ui/organisms/product/detail/product-info";
+import { Divider } from "@/components/ui/divider";
 
 export default async function Product({
   params,
@@ -16,7 +17,7 @@ export default async function Product({
     <div className="flex flex-1 flex-col items-center justify-start gap-4 pb-6">
       <ProductInfo productId={product} storeId={id} />
 
-      <div className="h-1 self-stretch bg-gray-100" />
+      <Divider />
 
       <CategoryRadio>
         <CategoryRadio.Header subtitle="escolha 1">
@@ -47,7 +48,7 @@ export default async function Product({
         </CategoryCheckbox.List>
       </CategoryCheckbox>
 
-      <div className="h-1 self-stretch bg-gray-100" />
+      <Divider />
 
       <CategoryRadio>
         <CategoryRadio.Header subtitle="escolha até 1">
@@ -61,7 +62,7 @@ export default async function Product({
         </CategoryRadio.List>
       </CategoryRadio>
 
-      <div className="h-1 self-stretch bg-gray-100" />
+      <Divider />
 
       <CategoryCheckbox>
         <CategoryCheckbox.Header subtitle="escolha até 2">
@@ -80,7 +81,7 @@ export default async function Product({
         </CategoryCheckbox.List>
       </CategoryCheckbox>
 
-      <div className="h-1 self-stretch bg-gray-100" />
+      <Divider />
 
       <Textarea
         className="h-20 w-80 px-3 py-2.5 text-sm leading-tight font-semibold text-neutral-500 outline-offset-[-1px] outline-gray-300"

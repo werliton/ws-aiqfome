@@ -1,5 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Edit2, Minus, Plus } from "lucide-react";
+import { ButtonAdd } from "@/components/ui/atoms/button-add";
+import { ButtonMinus } from "@/components/ui/atoms/button-minus";
+import { Edit2 } from "lucide-react";
 
 export const TiketFoodItemButtons = () => {
   return (
@@ -28,26 +29,14 @@ export const TiketFoodItemButtons = () => {
           data-text-size="14pt"
           className="flex items-center justify-center gap-1 rounded-lg"
         >
-          <Button
-            variant="outline"
-            size="icon"
-            className="h-7 w-7 rounded-full p-1"
-          >
-            <Minus height={24} width={24} className="text-accent" />
-          </Button>
+          <ButtonAdd />
           <div className="inline-flex h-7 w-7 flex-col items-center justify-center gap-2">
             <div className="justify-start text-center text-sm leading-tight font-bold text-neutral-700">
               2
             </div>
           </div>
           <div className="flex items-center justify-end py-0.5 pl-1">
-            <Button
-              variant="outline"
-              size="icon"
-              className="h-7 w-7 rounded-full p-1"
-            >
-              <Plus height={24} width={24} className="text-accent" />
-            </Button>
+            <ButtonMinus />
           </div>
         </div>
       </div>

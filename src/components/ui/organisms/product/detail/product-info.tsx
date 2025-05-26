@@ -1,12 +1,16 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { AddProduct } from "@/components/ui/molecules/add-product";
 import { PriceBase } from "@/components/ui/price";
 import {
   TextExtraLarge,
   TextMedium,
   TextSecondary,
 } from "@/components/ui/title";
+import { useCart } from "@/hooks/useCart";
 import { getProductById } from "@/lib/data";
+import { currencyFormat } from "@/lib/utils";
 import Image from "next/image";
 
 interface ProductInfoProps {
@@ -23,6 +27,9 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
   if (!product) return null;
 
   const { description, image, price, title } = product;
+
+  const { handleAddQuantity, handleRemoveQuantity, total, quantity } =
+    useCart(price);
 
   return (
     <div className="flex flex-col items-start justify-start gap-4 self-stretch">
@@ -44,7 +51,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
           </div>
 
           <Label asChild className="text-lg font-extrabold">
-            <PriceBase>R$ {price}</PriceBase>
+            <PriceBase>{currencyFormat(price)}</PriceBase>
           </Label>
         </div>
         <TextSecondary>{description}</TextSecondary>
@@ -62,13 +69,24 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
               asChild
               className="text-sm leading-tight font-bold text-neutral-700"
             >
-              <PriceBase>R$ 15,00</PriceBase>
+              <PriceBase>{total}</PriceBase>
             </Label>
           </div>
         </div>
-        <Button className="bg-neutral-500 px-6 py-2.5 text-sm leading-tight font-bold text-white">
-          adicionar
-        </Button>
+        {quantity > 0 ? (
+          <AddProduct
+            handleAddQuantity={handleAddQuantity}
+            handleRemoveQuantity={handleRemoveQuantity}
+            quantity={quantity}
+          />
+        ) : (
+          <Button
+            className="bg-neutral-500 px-6 py-2.5 text-sm leading-tight font-bold text-white"
+            onClick={handleAddQuantity}
+          >
+            Adicionar
+          </Button>
+        )}
       </div>
     </div>
   );
