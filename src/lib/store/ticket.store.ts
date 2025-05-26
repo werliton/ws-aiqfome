@@ -10,7 +10,7 @@ type Item = {
 
 type TickerState = {
     items: Item[]
-    shop: Store | null
+    shop: Store
     setTicket(product: Product, shop: Store): void
     incrementQuantity(product: Product): void
     decrementQuantity(product: Product): void
@@ -29,6 +29,18 @@ const STATE_RESET: Item = {
     quantity: 0,
     total: 0
 }
+const SHOP_DEFAULT:Store = {
+    "id": "burger-king",
+    "slug": "burger-king",
+    "name": "Burger King",
+    "image": "/images/stores/burgerking.png",
+    "delivery": 0.0,
+    "review": 4.7,
+    "open": false,
+    "hasPromotion": false,
+    categories: [],
+    products: []
+}
 /**
  * TODO: Remover loja do ZusStore quando quantity for zero
  */
@@ -36,7 +48,7 @@ const STATE_RESET: Item = {
 export const useTicketStore = create<TickerState>()(
     persist((set) => ({
         items: [],
-        shop: null,
+        shop: SHOP_DEFAULT,
         setTicket: (product, shop) => set((state) => ({
             items: [...state.items, {
                 product,
