@@ -1,5 +1,5 @@
-import { Button } from "../button";
-import { RNode } from "../subtitle";
+import { Button } from "../atoms/button";
+import { RNode } from "../atoms/subtitle";
 
 export const Payment = ({ children }: RNode) => {
   return (

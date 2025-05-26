@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { RNode } from "../../subtitle";
+import { RNode } from "../../atoms/subtitle";
 import { ReactNode } from "react";
 
 interface TicketHeaderProps {

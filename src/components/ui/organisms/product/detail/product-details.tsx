@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/atoms/button";
 import { Label } from "@/components/ui/label";
 import { AddProduct } from "@/components/ui/molecules/add-product";
 import { PriceBase } from "@/components/ui/price";
@@ -6,7 +6,7 @@ import {
   TextExtraLarge,
   TextMedium,
   TextSecondary,
-} from "@/components/ui/title";
+} from "@/components/ui/atoms/title";
 import { useCart } from "@/hooks/useCart";
 import { currencyFormat } from "@/lib/utils";
 import { Product, Store } from "@/types";

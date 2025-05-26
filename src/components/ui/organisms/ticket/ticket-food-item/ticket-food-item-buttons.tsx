@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { RNode } from "@/components/ui/subtitle";
+import { Button } from "@/components/ui/atoms/button";
+import { RNode } from "@/components/ui/atoms/subtitle";
 import { Edit2, Minus, Plus } from "lucide-react";
 
 export const TicketFoodItemButtons = ({ children }: RNode) => {

@@ -1,7 +1,7 @@
 // SSG
 export const dynamic = "force-static";
 
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/atoms/scroll-area";
 import { SearchBar } from "@/components/ui/search-bar/search-bar";
 import { StoreClosed } from "@/components/ui/stores/store-closed";
 import { StoreOpened } from "@/components/ui/stores/store-opened";

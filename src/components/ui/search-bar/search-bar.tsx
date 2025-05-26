@@ -1,4 +1,4 @@
-import { SearchForm } from "../search-form";
+import { SearchForm } from "../atoms/search-form";
 
 export const SearchBar = () => {
   return (

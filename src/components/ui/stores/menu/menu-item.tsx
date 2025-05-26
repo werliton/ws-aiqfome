@@ -4,8 +4,8 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "../../collapsible";
-import { CurrencyIcon } from "../../icons";
+} from "../../atoms/collapsible";
+import { CurrencyIcon } from "../../atoms/icons";
 import { Category } from "@/types";
 import { MenuSubitemList } from "./menu-subitem-list";
 import { useMenuItem } from "@/hooks/useMenuItem";

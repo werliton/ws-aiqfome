@@ -1,5 +1,5 @@
 import { PriceBase } from "../../../price";
-import { RNode } from "@/components/ui/subtitle";
+import { RNode } from "@/components/ui/atoms/subtitle";
 
 export const TicketFoodItem = ({ children }: RNode) => {
   return (
