@@ -22,7 +22,7 @@ export const TicketHeader = ({ children, imagePath }: TicketHeaderProps) => {
   );
 };
 
-TicketHeader.Title = ({ children }: RNode) => (
+const TicketHeaderTitle = ({ children }: RNode) => (
   <div className="inline-flex flex-col items-start justify-start gap-1">
     <div className="justify-start text-sm leading-tight font-bold text-neutral-500">
       seus itens em
@@ -32,3 +32,5 @@ TicketHeader.Title = ({ children }: RNode) => (
     </div>
   </div>
 );
+
+TicketHeader.Title = TicketHeaderTitle;

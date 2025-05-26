@@ -1,4 +1,4 @@
-import { PriceBase, PricePlus } from "../../../price";
+import { PriceBase } from "../../../price";
 import { RNode } from "@/components/ui/subtitle";
 
 export const TicketFoodItem = ({ children }: RNode) => {
@@ -9,7 +9,7 @@ export const TicketFoodItem = ({ children }: RNode) => {
   );
 };
 
-TicketFoodItem.Header = ({ children }: RNode) => (
+const TicketFoodItemHeader = ({ children }: RNode) => (
   <div
     data-pic="off"
     data-promo="off"
@@ -19,7 +19,7 @@ TicketFoodItem.Header = ({ children }: RNode) => (
   </div>
 );
 
-TicketFoodItem.Title = ({ children }: RNode) => (
+const TicketFoodItemTitle = ({ children }: RNode) => (
   <div className="flex flex-1 items-center justify-start gap-1">
     <div className="flex-1 justify-start text-sm leading-tight font-bold text-neutral-800">
       {children}
@@ -27,6 +27,10 @@ TicketFoodItem.Title = ({ children }: RNode) => (
   </div>
 );
 
-TicketFoodItem.Price = ({ children }: RNode) => (
+const TicketFoodItemPrice = ({ children }: RNode) => (
   <PriceBase>{children}</PriceBase>
 );
+
+TicketFoodItem.Header = TicketFoodItemHeader;
+TicketFoodItem.Title = TicketFoodItemTitle;
+TicketFoodItem.Price = TicketFoodItemPrice;

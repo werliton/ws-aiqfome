@@ -7,7 +7,7 @@ export const useCart = (product: Product, store: Store) => {
    const setTicket = ZusTicket.useSetTicket()
    const incrementQuantity = ZusTicket.useIncrementQuantity()
    const decrementQuantity = ZusTicket.useDecrementQuantity()
-   const { quantity, total } = ZusTicket.getItemInTicket(product.id)
+   const { quantity, total } = ZusTicket.useGetItemInTicket(product.id)
 
    function handleAddProduct() {
       setTicket(product, store)

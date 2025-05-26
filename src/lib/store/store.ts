@@ -32,18 +32,16 @@ const useStore = create<State>()(
 // Selectors
 
 const useSetStoreId = () => useStore(state => state.setStoreId)
-const getStoreId = () => useStore(state => state.storeId)
-
+const useGetStoreId = () => useStore(state => state.storeId)
 const useSetCategory = () => useStore(state => state.setCategory)
-const getCategory = () => useStore(state => state.category)
-
-const getAll = () => useStore(state => state)
+const useGetCategory = () => useStore(state => state.category)
+const useGetAll = () => useStore(state => state)
 
 
 export const Zus = {
     useSetStoreId,
     useSetCategory,
-    getStoreId,
-    getCategory,
-    getAll
+    useGetStoreId,
+    useGetCategory,
+    useGetAll
 }

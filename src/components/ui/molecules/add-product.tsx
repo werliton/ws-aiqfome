@@ -1,5 +1,4 @@
 import { Minus, Plus, Trash2 } from "lucide-react";
-import React from "react";
 import { Button } from "../button";
 
 interface AddProductProps {

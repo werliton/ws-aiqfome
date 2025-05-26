@@ -3,10 +3,7 @@ import { Product } from "@/types";
 import { CurrencyIcon } from "../../icons";
 import { PriceBase, PriceDiscounted, PriceOriginal } from "../../price";
 import { Subtitle, SubtitleItem } from "../../subtitle";
-import { currencyFormat } from "@/lib/utils";
 import Link from "next/link";
-import { ROUTES } from "@/lib/routes";
-import { Zus } from "@/lib/store/store";
 import { useMenuSubItem } from "@/hooks/useMenuSubItem";
 
 // = Extract<Product, 'price' | 'priceDiscounted' >

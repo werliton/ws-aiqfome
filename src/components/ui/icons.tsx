@@ -16,15 +16,10 @@ const DeliveryMotoIcon = ({ width = 24, height = 24 }: Icon) => (
   />
 );
 
-const UserIcon = () => {};
-const MarkerIcon = () => {};
-
-interface SVGIconProps extends React.SVGProps<SVGSVGElement> {}
-// TODO: CHECK THIS FORMAT
-export const DeliveryIcon: React.FC<SVGIconProps> = ({
+export const DeliveryIcon = ({
   className,
   ...props
-}) => (
+}: React.SVGProps<SVGSVGElement>) => (
   <svg
     {...props}
     className={className}
@@ -54,7 +49,7 @@ export const DeliveryIcon: React.FC<SVGIconProps> = ({
   </svg>
 );
 
-const StarIcon: React.FC<SVGIconProps> = ({ className, ...props }) => (
+const StarIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
   <svg
     {...props}
     className={className}
@@ -80,7 +75,10 @@ const StarIcon: React.FC<SVGIconProps> = ({ className, ...props }) => (
   </svg>
 );
 
-export const DotMini: React.FC<SVGIconProps> = ({ className, ...props }) => (
+export const DotMini = ({
+  className,
+  ...props
+}: React.SVGProps<SVGSVGElement>) => (
   <svg
     viewBox="0 0 8 8"
     fill="currentColor"
@@ -94,7 +92,10 @@ export const DotMini: React.FC<SVGIconProps> = ({ className, ...props }) => (
   </svg>
 );
 
-export const Heart: React.FC<SVGIconProps> = ({ className, ...props }) => (
+export const Heart = ({
+  className,
+  ...props
+}: React.SVGProps<SVGSVGElement>) => (
   <svg
     width="24"
     height="24"
@@ -120,7 +121,10 @@ export const Heart: React.FC<SVGIconProps> = ({ className, ...props }) => (
   </svg>
 );
 
-export const Share: React.FC<SVGIconProps> = ({ className, ...props }) => (
+export const Share = ({
+  className,
+  ...props
+}: React.SVGProps<SVGSVGElement>) => (
   <svg
     width="24"
     height="24"
@@ -146,10 +150,10 @@ export const Share: React.FC<SVGIconProps> = ({ className, ...props }) => (
   </svg>
 );
 
-export const CurrencyIcon: React.FC<SVGIconProps> = ({
+export const CurrencyIcon = ({
   className,
   ...props
-}) => (
+}: React.SVGProps<SVGSVGElement>) => (
   <svg
     width="24"
     className={className}

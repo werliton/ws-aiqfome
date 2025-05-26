@@ -25,8 +25,10 @@ export const Payment = ({ children }: RNode) => {
   );
 };
 
-Payment.Total = ({ children }: RNode) => (
+const PaymentTotal = ({ children }: RNode) => (
   <div className="justify-center text-xl font-extrabold text-purple-800">
     {children}
   </div>
 );
+
+Payment.Total = PaymentTotal;

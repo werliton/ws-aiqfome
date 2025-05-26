@@ -5,11 +5,9 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "../../collapsible";
-import { useState } from "react";
 import { CurrencyIcon } from "../../icons";
 import { Category } from "@/types";
 import { MenuSubitemList } from "./menu-subitem-list";
-import { Zus } from "@/lib/store/store";
 import { useMenuItem } from "@/hooks/useMenuItem";
 
 interface MenuItemProps {
