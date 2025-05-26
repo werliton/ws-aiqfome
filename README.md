@@ -15,6 +15,12 @@ Aplicação web desenvolvida em Next.js com foco na experiência mobile e fluide
 - Performance otimizada com Server Components
 - Boas práticas com componentes funcionais, hooks e contextos
 
+## Planejamento
+
+O projeto foi todo organizado, arquitetado e refinado. Após essas etapas, criei um Projeto no GitHub chamado aiqfome Projects, com as colunas (Backlog/In Progress/Done) e coloquei todas as tarefas mínimas dos requisitos com seus respectivos critérios de aceite, conforme imagem abaixo:
+
+<img src="./docs/kanbam.png" alt="home" width="700"/>
+
 ## Acessando na web
 
 Clique [aqui](https://ws-aiqfome-gs8yr2kao-werliton-silvas-projects.vercel.app/lojas/mat/japonesa-mat/sushi-1) para acessar a versão deployada
@@ -151,3 +157,8 @@ MIT
 - Conversor de cores code: https://oklch.com
 - Extensões do Figma: https://extensions.zeplin.io/
 - Cuidado ao usar icones do Lucid. Eles podem limitar a alterar de tamanhao, devido ao viewbox.
+
+## Futuras melhorias
+
+- Integração do Lighthouse CI (já tenho um projeto rodando com ele)
+- Criação de testes unitários
