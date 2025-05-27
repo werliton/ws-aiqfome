@@ -12,14 +12,25 @@ export default function Home() {
     <div className="">
       <SearchBar />
 
+      {/* Imagem mobile: visível só em telas pequenas */}
       <Image
-        className="mt-[1px] dark:invert"
-        src="/images/banner320.png"
-        alt="Banner principal"
+        src="/images/banner-mobile.png"
+        alt="Banner Mobile"
         width={390}
         height={130}
+        className="block md:hidden"
         priority
       />
+      {/* Imagem desktop: visível só em telas médias pra cima */}
+      <Image
+        src="/images/banner-desktop.png"
+        alt="Banner Desktop"
+        width={1200}
+        height={300}
+        className="hidden md:block"
+        priority
+      />
+
       <ScrollArea className="h-[calc(100%-260px)]">
         <div className="bg-background flex flex-col gap-4 px-4 pt-6 pb-6">
           <StoreOpened />

@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <Header />
         {/* 960 width */}
-        <main className="bg-background m-auto w-full max-w-[390px] flex-1">
+        <main className="bg-background m-auto w-full max-w-[390px] flex-1 md:max-w-[960px]">
           {children}
         </main>
         <Footer />
