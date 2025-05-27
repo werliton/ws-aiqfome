@@ -51,7 +51,11 @@ A seguir as telas da aplicação, ordenadas por suas respectivas funcionalidades
 A seguir os componentes que são dinâmicos:
 
 - Lista de Lojas na home
--
+- Detalhe da Loja selecionada com a adição, decremento e remocao de item
+- Listagem das categorias de cada loja com os respectivos produtos
+- Listagem de items no carrinho
+- Cálculo de total
+- Calculo final
 
 ## Tecnologias utilizadas
 
