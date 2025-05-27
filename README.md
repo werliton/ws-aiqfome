@@ -56,6 +56,14 @@ A seguir os componentes que são dinâmicos:
 - Listagem de items no carrinho
 - Cálculo de total
 - Calculo final
+- O botão de remover item do carrinho altera o ícone:
+
+  - quando tem uma quantidade maior que 2, exibe o ícone de 'MENOS'
+  - quando tem uma quantidade igual a 1, exibe o ícone de lixeira, conforme protótipo
+
+- O botão de VER TICKET é exibido apenas quando um produto é adicionado
+- O cálculo de total é automático
+- O cálculo geral na tela de Ticket também é automático
 
 ## Tecnologias utilizadas
 

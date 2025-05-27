@@ -18,7 +18,7 @@ export default function Home() {
         alt="Banner Mobile"
         width={390}
         height={130}
-        className="block md:hidden"
+        className="block w-full md:hidden"
         priority
       />
       {/* Imagem desktop: visível só em telas médias pra cima */}
