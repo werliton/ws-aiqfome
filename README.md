@@ -23,7 +23,7 @@ O projeto foi todo organizado, arquitetado e refinado. Após essas etapas, criei
 
 ## Acessando na web
 
-Clique [aqui](https://ws-aiqfome-gs8yr2kao-werliton-silvas-projects.vercel.app/lojas/mat/japonesa-mat/sushi-1) para acessar a versão deployada
+Clique [aqui](https://ws-aiqfome.vercel.app/) para acessar a versão deployada
 
 ## Telas da aplicação
 
