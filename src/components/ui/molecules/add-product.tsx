@@ -1,5 +1,5 @@
 import { Minus, Plus, Trash2 } from "lucide-react";
-import { Button } from "../button";
+import { Button } from "../atoms/button";
 
 interface AddProductProps {
   handleAddQuantity(): void;

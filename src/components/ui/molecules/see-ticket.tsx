@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "../button";
+import { Button } from "../atoms/button";
 import Link from "next/link";
 import { ZusTicket } from "@/lib/store/ticket.store";
 

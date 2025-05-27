@@ -1,7 +1,7 @@
 "use client";
 import { ChevronRight } from "lucide-react";
 
-import { DeliveryIcon, DotMini, StarIcon } from "../../icons";
+import { DeliveryIcon, DotMini, StarIcon } from "../../atoms/icons";
 
 import { InfoTitle } from "./store-info-title";
 import { useStoreInfo } from "@/hooks/useStoreInfo";

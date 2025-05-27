@@ -1,11 +1,11 @@
 export const dynamic = "force-static";
 
-import { Card, CardHeader, CardTitle, CardDescription } from "../card";
+import { Card, CardHeader, CardTitle, CardDescription } from "../atoms/card";
 import Image from "next/image";
 import { Store } from "@/types";
 import { cn, currencyFormat, getStoreRoute } from "@/lib/utils";
 import { Dot } from "lucide-react";
-import { DeliveryIcon, DeliveryMotoIcon, StarIcon } from "../icons";
+import { DeliveryIcon, DeliveryMotoIcon, StarIcon } from "../atoms/icons";
 import Link from "next/link";
 
 interface StoreItemProps {

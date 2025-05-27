@@ -1,10 +1,10 @@
 import { CategoryRadio } from "@/components/ui/organisms/product/category/category-radio";
 import { CategoryCheckbox } from "@/components/ui/organisms/product/category/category-checkbox";
 
-import { Textarea } from "@/components/ui/textarea";
+import { Textarea } from "@/components/ui/atoms/textarea";
 import { SeeTicket } from "@/components/ui/molecules/see-ticket";
 import { ProductInfo } from "@/components/ui/organisms/product/detail/product-info";
-import { Divider } from "@/components/ui/divider";
+import { Divider } from "@/components/ui/atoms/divider";
 
 export default async function Product({
   params,

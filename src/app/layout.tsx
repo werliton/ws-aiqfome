@@ -31,7 +31,8 @@ export default function RootLayout({
         className={`${nunitoMono.variable} ${nunitoSans.variable} flex h-screen flex-col antialiased`}
       >
         <Header />
-        <main className="bg-background m-auto w-full max-w-[390px] flex-1">
+        {/* 960 width */}
+        <main className="bg-background m-auto w-full max-w-[390px] flex-1 md:max-w-[960px]">
           {children}
         </main>
         <Footer />

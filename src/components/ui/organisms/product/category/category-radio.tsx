@@ -1,7 +1,7 @@
-import { CurrencyIcon } from "@/components/ui/icons";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { RNode } from "@/components/ui/subtitle";
+import { CurrencyIcon } from "@/components/ui/atoms/icons";
+import { Label } from "@/components/ui/atoms/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/atoms/radio-group";
+import { RNode } from "@/components/ui/atoms/subtitle";
 import { ReactNode } from "react";
 
 export const CategoryRadio = ({ children }: RNode) => {

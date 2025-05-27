@@ -1,7 +1,7 @@
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
-import { PricePlus } from "@/components/ui/price";
-import { RNode } from "@/components/ui/subtitle";
+import { Checkbox } from "@/components/ui/atoms/checkbox";
+import { Label } from "@/components/ui/atoms/label";
+import { PricePlus } from "@/components/ui/atoms/price";
+import { RNode } from "@/components/ui/atoms/subtitle";
 import { ReactNode } from "react";
 
 export const CategoryCheckbox = ({ children }: RNode) => {

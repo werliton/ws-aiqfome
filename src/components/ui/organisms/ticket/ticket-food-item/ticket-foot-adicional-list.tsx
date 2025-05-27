@@ -1,5 +1,5 @@
-import { PricePlus } from "@/components/ui/price";
-import { RNode } from "@/components/ui/subtitle";
+import { PricePlus } from "@/components/ui/atoms/price";
+import { RNode } from "@/components/ui/atoms/subtitle";
 import { ReactNode } from "react";
 
 export const TicketFootAditional = ({ children }: RNode) => {

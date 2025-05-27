@@ -1,4 +1,4 @@
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/atoms/scroll-area";
 import { StoreInfo } from "@/components/ui/stores/detail/store-info";
 import { StoreMenu } from "@/components/ui/stores/detail/store-menu";
 

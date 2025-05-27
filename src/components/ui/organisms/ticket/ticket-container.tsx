@@ -1,7 +1,7 @@
 "use client";
 
 import { useTicket } from "@/hooks/useTicket";
-import { Divider } from "../../divider";
+import { Divider } from "../../atoms/divider";
 import { Payment } from "../../molecules/payment";
 import { TicketHeader } from "./ticker-header";
 import { TicketFoodItem } from "./ticket-food-item/ticket-food-item";

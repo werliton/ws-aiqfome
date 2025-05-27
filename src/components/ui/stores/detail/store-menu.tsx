@@ -1,6 +1,6 @@
 "use client";
 
-import { Divider } from "../../divider";
+import { Divider } from "../../atoms/divider";
 import { MenuItem } from "../menu/menu-item";
 import { Fragment } from "react";
 import { useStoreMenu } from "@/hooks/useStoreMenu";
