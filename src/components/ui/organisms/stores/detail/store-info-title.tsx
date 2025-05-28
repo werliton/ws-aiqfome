@@ -1,7 +1,7 @@
 import { Store } from "@/types";
 import Image from "next/image";
-import { TextExtraLarge } from "../../atoms/title";
-import { Heart, Share } from "../../atoms/icons";
+import { TextExtraLarge } from "../../../atoms/title";
+import { Heart, Share } from "../../../atoms/icons";
 import { ChevronRight } from "lucide-react";
 
 interface TitleProps {

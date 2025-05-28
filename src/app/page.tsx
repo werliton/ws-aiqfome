@@ -2,16 +2,15 @@
 export const dynamic = "force-static";
 
 import { ScrollArea } from "@/components/ui/atoms/scroll-area";
-import { SearchBar } from "@/components/ui/search-bar/search-bar";
-import { StoreClosed } from "@/components/ui/stores/store-closed";
-import { StoreOpened } from "@/components/ui/stores/store-opened";
+import { SearchBar } from "@/components/ui/molecules/search-bar/search-bar";
+import { StoreClosed } from "@/components/ui/organisms/stores/store-closed";
+import { StoreOpened } from "@/components/ui/organisms/stores/store-opened";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="">
       <SearchBar />
-
       {/* Imagem mobile: visível só em telas pequenas */}
       <Image
         src="/images/banner-mobile.png"

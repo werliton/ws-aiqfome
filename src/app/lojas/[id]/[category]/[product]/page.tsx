@@ -1,3 +1,6 @@
+// ISR
+export const revalidate = 30;
+
 import { CategoryRadio } from "@/components/ui/organisms/product/category/category-radio";
 import { CategoryCheckbox } from "@/components/ui/organisms/product/category/category-checkbox";
 

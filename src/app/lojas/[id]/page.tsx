@@ -1,6 +1,9 @@
+// ISR
+export const revalidate = 60;
+
 import { ScrollArea } from "@/components/ui/atoms/scroll-area";
-import { StoreInfo } from "@/components/ui/stores/detail/store-info";
-import { StoreMenu } from "@/components/ui/stores/detail/store-menu";
+import { StoreInfo } from "@/components/ui/organisms/stores/detail/store-info";
+import { StoreMenu } from "@/components/ui/organisms/stores/detail/store-menu";
 
 export default async function StoreDetail({
   params,
